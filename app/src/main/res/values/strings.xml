@@ -1,0 +1,774 @@
+<resources>
+    <string name="app_name">shupool</string>
+
+    <string name="settingActivity_name">Settings</string>
+    <string name="map_sample_activity_name">Map Sample</string>
+
+    <string name="acitivity_intro_imageLogo">imageLogo</string>
+    <string name="acitivity_intro_imageBottom">imageBottom</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="main_drawer_header_text">KNSample</string>
+    <string name="main_drawer_item_search">검색</string>
+    <string name="main_drawer_item_dguide">길안내</string>
+    <string name="main_drawer_item_map_sample">Map Sample</string>
+    <string name="main_drawer_item_setting">설정</string>
+
+    <string name="search_content">Search</string>
+
+    <string name="map_sample_00_btn_01">라인 추가</string>
+    <string name="map_sample_00_btn_02">라인 제거</string>
+    <string name="map_sample_00_btn_03">원 그리기</string>
+    <string name="map_sample_00_btn_04">원 지우기</string>
+    <string name="map_sample_00_btn_05">폴리곤 추가</string>
+    <string name="map_sample_00_btn_06">폴리곤 제거</string>
+    <string name="map_sample_00_btn_07">구멍 난 폴리곤 추가</string>
+    <string name="map_sample_00_btn_08">구멍 난 폴리곤 제거</string>
+
+    <string name="map_sample_01_btn_01">애니메이션 시간</string>
+    <string name="map_sample_01_btn_02">중심점 이동</string>
+    <string name="map_sample_01_btn_03">줌 인</string>
+    <string name="map_sample_01_btn_04">줌 아웃</string>
+    <string name="map_sample_01_btn_05">탑 뷰 전환</string>
+    <string name="map_sample_01_btn_06">버드 뷰 전환</string>
+    <string name="map_sample_01_btn_07">지도 회전</string>
+
+    <string name="map_sample_02_btn_01">좌표 표시</string>
+    <string name="map_sample_02_btn_02">마커 제거</string>
+    <string name="map_sample_02_btn_03">마커 추가</string>
+    <string name="map_sample_02_btn_04">마커 이동</string>
+    <string name="map_sample_02_btn_05">마커 숨기기</string>
+    <string name="map_sample_02_btn_06">커스텀 마커 추가</string>
+    <string name="map_sample_02_btn_07">마커 화면 맞춤</string>
+    <string name="map_sample_02_btn_08">유저 로케이션 이동</string>
+
+    <string name="map_sample_03_btn_01">지도 주행 낮</string>
+    <string name="map_sample_03_btn_02">지도 주행 밤</string>
+    <string name="map_sample_03_btn_03">지도 검색 낮</string>
+    <string name="map_sample_03_btn_04">지도 검색 밤</string>
+    <string name="map_sample_03_btn_05">교통량 on/off</string>
+
+    <!-- preferences key -->
+    <string name="KNSample_Settings_user_id">knsample_pref_default_user_id</string>
+    <string name="KNSample_Settings_Sound_Volume">knsample_pref_etc_snd_volume</string>
+
+    <string name="KNSample_Settings_Car_Type">knsample_pref_guide_car_type</string>
+    <string name="KNSample_Settings_Use_Hipass">knsample_pref_guide_use_hipass</string>
+    <string name="KNSample_Settings_Car_Width">knsample_pref_guide_car_width</string>
+    <string name="KNSample_Settings_Car_Height">knsample_pref_guide_car_height</string>
+    <string name="KNSample_Settings_Car_Length">knsample_pref_guide_car_Length</string>
+    <string name="KNSample_Settings_Car_Weight">knsample_pref_guide_car_Weight</string>
+    <string name="KNSample_Settings_Fuel_Type">knsample_pref_guide_fuel_type</string>
+    <string name="KNSample_Settings_Map_Display_Type">knsample_pref_map_display_type</string>
+    <string name="KNSample_Settings_Map_Use_DarkMode">knsample_pref_map_use_darkmode</string>
+    <string name="KNSample_Settings_Map_Traffic_Mode">knsample_pref_map_traffic_mode</string>
+    <string name="KNSample_Settings_Map_Language">knsample_pref_map_language</string>
+    <string name="KNSample_Settings_Show_Poi">knsample_pref_map_show_poi</string>
+    <string name="KNSample_Settings_Show_Building">knsample_pref_map_show_building</string>
+
+    <!-- title -->
+    <string name="title_kimgisa_login">김기사 계정 로그인</string>
+    <string name="title_main">자주 가는 곳</string>
+    <string name="title_main_edit_destionation">등록된 장소 편집</string>
+    <string name="title_destionation_edit">장소 수정</string>
+    <string name="title_history">최근 방문</string>
+    <string name="title_tag">태그</string>
+    <string name="title_search">검색</string>
+    <string name="title_recent_search">최근검색</string>
+    <string name="title_address_search">주소검색</string>
+    <string name="title_around_search">주변검색</string>
+    <string name="title_more">더보기</string>
+    <string name="title_setting">환경 설정</string>
+    <string name="title_auth">카카오내비 이용약관</string>
+    <string name="title_more_myinfo">내 정보 / 차량 정보</string>
+    <string name="title_more_withdraw">탈퇴하기</string>
+    <string name="title_more_voice">길안내 음성</string>
+    <string name="title_setting_night_mode">야간 모드</string>
+    <string name="title_setting_blackbox">블랙박스 녹화</string>
+    <string name="title_setting_blackbox_size">녹화 사이즈</string>
+    <string name="title_setting_blackbox_encoder">인코더</string>
+    <string name="title_setting_blackbox_max">녹화 용량</string>
+    <string name="title_setting_voice_reco">음성 검색</string>
+    <string name="title_setting_voice_gesture">음성 인식 제스처</string>
+    <string name="title_more_voice_list">음성 선택</string>
+    <string name="title_more_notice">공지사항</string>
+    <string name="title_more_error_report">오류 제보</string>
+    <string name="title_more_error_report_edit">오류 제보 편집</string>
+    <string name="title_more_map_setting">지도 다운로드</string>
+    <string name="title_more_event">이벤트</string>
+    <string name="title_more_car">내 차 아이콘</string>
+    <string name="title_more_permission">접근권한 설정</string>
+    <string name="title_more_permission_m_under">접근권한</string>
+    <string name="title_more_t_account">카카오 T 계정 관리</string>
+    <string name="title_voice_gree">정보수집동의</string>
+    <string name="title_more_widget_settings">위젯 설정</string>
+    <string name="title_more_widget_add">위젯 추가</string>
+
+    <!-- common -->
+    <string name="label_kakao_navi">카카오내비</string>
+    <string name="label_confirm">확인</string>
+    <string name="label_yes">예</string>
+    <string name="label_no">아니요</string>
+    <string name="label_setting">설정</string>
+    <string name="label_setup">설정하기</string>
+    <string name="label_save">저장</string>
+    <string name="label_apply">적용</string>
+    <string name="label_close">닫기</string>
+    <string name="label_complete">완료</string>
+    <string name="label_back">이전</string>
+    <string name="label_agree">동의</string>
+    <string name="label_list_more">장소 결과 더보기</string>
+    <string name="label_select_delete">선택한 장소 삭제</string>
+    <string name="label_all">전체</string>
+    <string name="label_delete">삭제</string>
+    <string name="label_edit">편집</string>
+    <string name="label_modify">수정</string>
+    <string name="label_cancel">취소</string>
+    <string name="label_retry">재시도</string>
+    <string name="label_termination">종료</string>
+    <string name="label_lot_number_address">지번</string>
+    <string name="label_street_name_address">도로명</string>
+    <string name="label_current_location">현재 위치</string>
+    <string name="label_safe_driving">안전 운전</string>
+    <string name="label_notice">공지사항</string>
+    <string name="label_version_update">업데이트</string>
+    <string name="label_next_time">나중에</string>
+    <string name="label_copy">번호복사</string>
+    <string name="label_people_count">명</string>
+    <string name="label_dog">개</string>
+    <string name="label_distance">거리</string>
+    <string name="label_tollfee">통행료</string>
+    <string name="label_continue_directions">길안내 계속</string>
+    <string name="label_setting_right_now">지금 설정</string>
+    <string name="label_around">주변</string>
+    <string name="msg_error_network_connection_check">네트워크 연결이 원활하지 않습니다.</string>
+    <string name="msg_error_login_fail_retry">카카오 회원 인증에 실패하였습니다. \n다시 시도하시겠습니까?</string>
+    <string name="msg_error_temporary_fail">일시적인 오류가 발생했습니다.\n다시 시도해주세요.</string>
+    <string name="msg_error_abnormal_access">비정상 접근 오류\n잠시 후 다시 시도해 주세요.</string>
+    <string name="msg_error_abnormal_uri">잘못된 접근 입니다.</string>
+    <string name="msg_error_not_supported">지원하지 않는 기기입니다.</string>
+    <string name="msg_error_google_play_service">구글 플레이 서비스가 정상적으로 동작하지 않습니다.\n구글 플레이 서비스 버전과 계정상태를 확인해 주세요.</string>
+    <string name="msg_destination_delete_check">선택한 장소를 삭제할까요?</string>
+    <string name="msg_emoticons_not_supported">이모티콘은 사용할 수 없습니다.</string>
+    <string name="msg_phone_not_supported">전화 기능을 이용할 수 없습니다.</string>
+    <string name="msg_regist_destination_fail">장소 등록에 실패하였습니다.\n잠시 후 다시 시도해 주세요.</string>
+    <string name="msg_termination_kakaonavi">카카오내비를 종료합니다.</string>
+    <string name="msg_clipboard_copy_fail">클립보드 복사를 할 수 없습니다.</string>
+    <string name="msg_request_info_fail">요청한 정보가 유효하지 않습니다.</string>
+    <string name="msg_address_none">주소 확인 불가</string>
+    <string name="msg_rei_ignore_route">무시하고 경로 탐색</string>
+    <string name="msg_rei_ignore_directions">무시하고 길안내</string>
+    <string name="msg_error_code" formatted="false">(오류코드 %s)</string>
+    <string name="msg_error_gps_fail">GPS 데이터 수신이 불가능하여 카카오내비 앱을 종료합니다.</string>
+    <string name="msg_error_googleplay_fail">구글 플레이 서비스가 정상 동작하지 않습니다. 구글 플레이 서비스 버전과 계정 상태를 확인해 주세요.</string>
+    <string name="msg_ferry_guide_included">경로 상에 배를 통한 이동이 포함되어 있습니다.</string>
+
+    <!-- permission -->
+    <string name="label_permission_setting">권한 설정</string>
+    <string name="label_permission_location">위치</string>
+    <string name="label_permission_storage">저장공간</string>
+    <string name="label_permission_microphone">마이크</string>
+    <string name="label_permission_phone">전화</string>
+    <string name="label_permission_contacts">주소록</string>
+    <string name="label_permission_camera">카메라</string>
+    <string name="label_permission_address_book">주소록</string>
+    <string name="label_option_overlay">다른앱 위에 그리기</string>
+    <string name="label_option_widget">위젯</string>
+    <string name="label_permission_default">필수</string>
+    <string name="label_permission_option">선택</string>
+    <string name="msg_permission_location_desc">길안내, 벌집 화면 구성, 주변검색을 위해 필요</string>
+    <string name="msg_permission_storage_desc">지도 데이터 및 리소스 저장을 위해 필요</string>
+    <string name="msg_permission_phone_desc">주행 시 전화 통화 시 길안내 음소거를 위해 필요</string>
+    <string name="msg_permission_mic_desc">블랙박스 음성 녹화를 위해 필요</string>
+    <string name="msg_permission_address_book_desc">음성 인식을 통한 전화걸기를 위해 필요</string>
+    <string name="msg_option_overlay_desc">백그라운드 실행시 길안내 위젯을 다른 앱 위에 표시</string>
+    <string name="msg_base_permission_denied">카카오내비를 이용하시려면 필수 권한을 허용해야 합니다.</string>
+    <string name="msg_t_account_permission_denied">카카오T 계정 관리를 이용하시려면 필수 권한을 허용해야 합니다.</string>
+    <string name="msg_permission_denied">해당 기능을 사용하시려면 아래 권한을 허용해야 합니다.</string>
+    <!--    <string name="msg_permission_camera">블랙박스 기능, 벌집 화면 꾸미기, QR코드 인식을 위해 필요</string>-->
+    <!--    <string name="msg_permission_camera_ar">AR(증강현실), 블랙박스 기능, 벌집 화면 꾸미기, QR코드 인식을 위해 필요</string>-->
+
+    <string name="msg_permission_denied_camera">카메라 접근 권한이 없어서 카메라를 사용할 수 없습니다.</string>
+    <string name="msg_permission_denied_camera_ar">카메라 접근 권한이 없어서 AR내비모드를 사용할 수 없습니다.</string>
+    <string name="msg_permission_option_etc_desc">\'선택\' 권한은 동의하지 않아도 서비스 이용이 가능</string>
+    <string name="msg_permission_guide">카카오내비를 사용하기 위해\n필요한 <b>접근 권한</b>을 허용해주세요.</string>
+    <string name="msg_system_alert_window_permission_denied">백그라운드 실행 시 길안내 위젯을 다른 앱 위에 표시하기 위해 다른앱 위에 그리기 사용을 허용해야 합니다.</string>
+    <string name="msg_permission_blackbox">블랙박스를 사용하려면 카메라 권한이 필요합니다.</string>
+    <string name="msg_permission_denied_blackbox">카메라에 대한 접근 권한이 없어 블랙박스를 사용할 수 없습니다.</string>
+    <string name="msg_permission_blackbox_mic">블랙박스 음성 녹음 기능을 사용하려면 마이크 권한이 필요합니다.</string>
+    <string name="msg_permission_denied_blackbox_mic">마이크에 대한 접근 권한이 없어 블랙박스 음성 녹음 기능을 사용할 수 없습니다.</string>
+    <string name="msg_base_permission_denied_uri_error">카카오내비 필수 권한을 허용한 후 다시 시도해 주세요.</string>
+
+    <!-- intro -->
+    <string name="msg_intro_map_none">지도 데이터가 삭제되어 클라우드 지도로 전환하였습니다. 더보기에서 다시 다운로드 해주세요.</string>
+    <string name="msg_intro_map_old_ver">오래된 버전의 지도로 확인되어 클라우드 지도로 전환하였습니다. 더보기에서 다시 다운로드 해주세요.</string>
+
+    <!-- webview -->
+    <string name="label_webview_nomore">다시 보지 않기</string>
+
+    <!-- main -->
+    <string name="label_main_add_destination">장소 등록</string>
+    <string name="label_main_history">최근</string>
+    <string name="label_main_tag">태그</string>
+    <string name="label_main_more">더보기</string>
+    <string name="label_main_destination_search">장소 검색</string>
+    <string name="label_main_start_now">바로 시작</string>
+    <string name="label_main_beehive_home">우리집</string>
+    <string name="label_main_beehive_company">회사</string>
+    <string name="label_main_beehive_kakao">카카오</string>
+    <string name="label_main_beehive_hsquare">H스퀘어</string>
+    <string name="label_main_beehive_school">학교</string>
+    <string name="label_main_beehive_mart">마트</string>
+    <string name="label_main_beehive_store">백화점</string>
+    <string name="label_main_beehive_airport">공항</string>
+    <string name="label_main_beehive_museum">박물관</string>
+    <string name="label_main_beehive_gallery">미술관</string>
+    <string name="label_main_beehive_park">공원</string>
+    <string name="label_main_beehive_pension">팬션</string>
+    <string name="label_main_beehive_resort">리조트</string>
+    <string name="label_main_beehive_camping">캠핑장</string>
+    <string name="msg_main_sync_destination_fail">벌집 동기화에 실패 하였습니다.\n다시 시도하시겠습니까?</string>
+    <string name="msg_main_select_destination_fail">목적지 리스트를 가져오는데 실패하였습니다.</string>
+    <string name="msg_main_delete_destination_fail">선택한 목적지를 삭제하는데 실패하였습니다.</string>
+    <string name="msg_main_destination_none">자주 가는 장소를 등록해놓으면\n이후에 쉽게 찾아갈 수 있습니다.</string>
+    <string name="msg_main_destination_edit_none">자주 가는 장소를 등록해보세요.</string>
+    <string name="msg_main_destination_edit_none2">먼저 자주 가는 장소를 등록해보세요.</string>
+    <string name="msg_main_destination_add_complete">태그가 추가되었습니다.\n지금 바로 확인해보세요.</string>
+    <string name="msg_main_destination_recent_directions" formatted="false">주행중인 경로 (%s)가 있습니다. 이어서 주행하시겠습니까?</string>
+    <string name="msg_main_destination_max" formatted="false">저장된 장소의 개수가 %d개 이상입니다. 원활한 이용을 위해 목록뷰로 전환되었습니다.</string>
+    <string name="msg_main_destination_shared_download_tag_fail">태그 저장에 실패하였습니다.\n재시도하시겠습니까?</string>
+    <string name="msg_main_destination_delete_success">목적지 삭제 성공</string>
+    <string name="msg_main_auto_start_safety" formatted="false">%d초 뒤 안전 운전 모드가 자동 실행 됩니다.</string>
+    <string name="msg_main_set_hipass">하이패스를 장착하셨나요?</string>
+    <string name="msg_main_set_hipass_desc1">하이패스 장착 여부에 따라 요금 및 경로 안내가 달라질 수 있습니다.</string>
+    <string name="msg_main_set_hipass_desc2">추후 설정 변경은 [더보기 > 내 정보/차량 정보 > 하이패스 장착]에서 가능합니다.</string>
+
+    <!-- tag -->
+    <string name="label_tag_add">태그 추가</string>
+    <string name="label_tag_destination_add">장소 추가</string>
+    <string name="label_tag_with_destination_select_save">선택한 장소에 태그 저장</string>
+    <string name="label_tag_share">친구 추천</string>
+    <string name="label_tag_noTag">태그 없음</string>
+    <string name="label_tag_local">나의 태그</string>
+    <string name="label_tag_suggest">추천 태그</string>
+    <string name="msg_tag_none">등록된 태그가 없습니다.\n태그를 이용해 등록된 장소를 쉽게 관리하세요.</string>
+    <string name="msg_tag_empty">태그에 해당하는 장소가 없습니다.</string>
+    <string name="msg_tag_duplicate_check">이미 등록된 태그입니다.</string>
+    <string name="msg_tag_delete_check">선택한 태그를 삭제할까요?</string>
+    <string name="msg_tag_share_fail">태그 공유에 실패 하였습니다.\n잠시 후 다시 시도해주세요.</string>
+    <string name="msg_tag_delete_with_destination_check_title">태그와 관련된 장소까지 함께 삭제 할까요?</string>
+    <string name="msg_tag_delete_with_destination_check_msg">2개 이상의 태그가 지정된 장소는 삭제되지 않습니다.</string>
+    <string name="msg_tag_space_not_enter">태그명은 띄어쓰기를 할 수 없습니다.</string>
+    <string name="msg_tag_comma_not_enter">태그명에 콤마를 사용 할 수 없습니다.</string>
+    <string name="msg_tag_empty_destination">등록할 목적지가 없습니다.</string>
+    <string name="msg_tag_list_select_fail">태그 리스트 조회에 실패하였습니다.</string>
+    <string name="msg_tag_list_delete_fail">태그 삭제에 실패하였습니다.</string>
+    <string name="msg_tag_save_fail">태그 저장에 실패하였습니다.</string>
+
+    <!-- login, secesstion, access terms -->
+    <string name="label_login">로그인</string>
+    <string name="label_login_kakao">카카오톡으로 시작하기</string>
+    <string name="label_login_kakao_input_id">카카오 계정 직접 입력</string>
+    <string name="msg_login_fail">로그인에 실패하였습니다.</string>
+    <string name="msg_login_fail_kakao">로그인 실패 (kakao session)</string>
+    <string name="msg_login_fail_not_sighed">가입회원이 아닙니다.</string>
+
+    <!-- sort, search category -->
+    <string name="label_sort_string">가나다순</string>
+    <string name="label_sort_lately_visit">최근 방문순</string>
+    <string name="label_sort_near">거리순</string>
+    <string name="label_sort_best">인기순</string>
+    <string name="label_sort_accuracy">정확도순 </string>
+    <string name="label_sort_price">가격순</string>
+    <string name="label_search_selecte_region">지역 선택</string>
+    <string name="label_search_other_region">다른 지역 검색</string>
+    <string name="label_search_all_region">모든 지역 보기</string>
+    <string name="label_search_category_gas_station">주유소</string>
+    <string name="label_search_category_parking">주차장</string>
+    <string name="label_search_category_restaurant">맛집</string>
+    <string name="label_search_category_travel">지역명소</string>
+    <string name="label_search_category_hotel">숙박</string>
+    <string name="label_search_re_search">(으)로 재검색하기 ></string>
+    <string name="label_search_region">(지역명)</string>
+    <string name="label_search_place">(장소명)</string>
+    <string name="label_search_region_select">지역 선택</string>
+    <string name="label_search_to_destination">도착지로</string>
+    <string name="label_search_to_stops">경유지로</string>
+    <string name="label_search_region_do">광역시/도</string>
+    <string name="label_search_region_si">시/군/구</string>
+    <string name="label_search_region_dong">도로/읍/면/동</string>
+    <string name="label_search_selecte_other_region">지역명 선택</string>
+
+    <!-- destination info -->
+    <string name="label_dest_info_driving_directions_start">길안내 시작</string>
+    <string name="label_dest_info_directions_option_recommend1">추천경로1</string>
+    <string name="label_dest_info_directions_option_recommend2">추천경로2</string>
+    <string name="label_dest_info_directions_option_quick">빠른길안내</string>
+    <string name="label_dest_info_directions_option_free">무료도로우선</string>
+    <string name="label_dest_info_directions_option_short">최단거리</string>
+    <string name="label_dest_info_directions_option_bike">자동차전용제외</string>
+    <string name="label_dest_info_directions_option_easy">큰길우선</string>
+    <string name="label_dest_info_directions_option_expressway">고속도로우선</string>
+    <string name="label_dest_info_directions_option_general">일반도로우선</string>
+    <string name="label_dest_info_route">경로 보기</string>
+    <string name="label_dest_info_short_detail">상세</string>
+    <string name="label_dest_info_start">출발</string>
+    <string name="label_dest_info_arrive">도착</string>
+    <string name="label_dest_info_safe_driving_start">안전 운전 시작</string>
+    <string name="label_dest_info_start_kakaot_driver">드라이버 호출</string>
+    <string name="label_dest_info_min_time">최소시간</string>
+    <string name="label_poi_save">장소저장</string>
+    <string name="label_poi_edit">장소수정</string>
+    <string name="label_poi_info">상세정보</string>
+    <string name="label_poi_around_info">주변정보</string>
+    <string name="label_poi_kakaotalk_share">카톡공유</string>
+    <string name="msg_dest_info_add_tag">#태그를 추가해보세요.</string>
+    <string name="msg_dest_info_route_error">경로확인불가</string>
+
+    <!-- destination edit -->
+    <string name="label_dest_edit_destination_save">등록하기</string>
+    <string name="msg_dest_edit_tag_input_desc">띄어쓰기를 하면 태그가 입력됩니다.</string>
+    <string name="msg_dest_edit_delete_check">이 장소를 삭제할까요?</string>
+    <string name="msg_dest_edit_camera_disable">카메라 캡쳐 기능을 지원하지 않는 기기 입니다.</string>
+    <string name="msg_dest_edit_delete_fail">삭제하는데 실패하였습니다.</string>
+    <string name="msg_dest_edit_save_fail">저장하는데 실패하였습니다.</string>
+    <string name="msg_dest_edit_beehive_edit_desc">나만의 벌집을 만들어보세요.</string>
+    <string name="label_dest_edit_name">장소명</string>
+    <string name="label_dest_edit_tel">전화</string>
+    <string name="label_dest_edit_tag">태그</string>
+    <string name="label_camera">카메라</string>
+    <string name="label_photo">사진</string>
+    <string name="hint_dest_edit_tags">태그 입력 (최대 30자)</string>
+
+    <!-- destination history -->
+    <string name="label_dest_history_all_checked">모두 선택</string>
+    <string name="label_dest_history_all_unchecked">모두 선택 해제</string>
+    <string name="msg_destination_history_empty">최근에 방문한 곳이 없습니다.</string>
+    <string name="msg_destination_history_fail">최근 방문기록을 가져오는데 실패 하였습니다.</string>
+    <string name="msg_destination_history_delete_fail">최근 방문기록을 삭제하는데 실패 하였습니다.</string>
+
+    <!-- search text-->
+    <string name="msg_search_recent_empty">검색 히스토리가 없습니다.</string>
+    <string name="msg_search_result_empty">새로운 장소를 발견하셨다면, 제보해주세요.\n검토 후에 새로운 장소로 등록됩니다.</string>
+    <string name="msg_search_result_retry">(으)로 다시 검색할까요?</string>
+    <string name="msg_search_result_place_regist">신규 장소 등록 제보</string>
+    <string name="msg_search_keyword_input">검색어를 입력하세요.</string>
+    <string name="label_search_error">검색 오류</string>
+    <string name="msg_search_addr_detail_input">상세 주소를 입력하세요.</string>
+    <string name="label_search_my_place">내 장소 검색결과</string>
+    <string name="label_search_guide_point">진입지점</string>
+    <string name="label_search_my_place_more">내 장소 더보기</string>
+    <string name="label_search_all_history_delete">전체 기록 삭제</string>
+    <string name="label_search_destination_more_hide">내 장소 검색결과 접기</string>
+    <string name="msg_search_history_delete_all">삭제할까요? 최근 도착지 삭제시 \n[최근 방문] 목록에서도 삭제됩니다.</string>
+    <string name="msg_search_around_parking_value" formatted="false">%s %,d원</string>
+    <string name="msg_search_around_empty" formatted="false">주변 %s에 %s이(가) 없습니다.\n거리를 변경해보세요.</string>
+
+    <!-- 공유 -->
+    <string name="label_share">공유</string>
+    <string name="label_share_start_kakao_navi">카카오내비로 길안내</string>
+    <string name="label_share_check_kakao_navi">카카오내비에서 확인</string>
+    <string name="label_share_poi_name">공유받은 위치</string>
+    <string name="msg_share_poi_current" formatted="false">위치 : %s</string>
+    <string name="msg_share_poi_destination" formatted="false">목적지 : %s\n도착예정시간 : %s</string>
+    <string name="msg_share_poi_current_point" formatted="false">%s을(를) 지나고 있습니다.\n\n목적지 : %s\n도착예정시간 : %s</string>
+    <string name="msg_share_poi_fail">장소공유 내보내기에 실패했습니다.</string>
+    <string name="msg_share_tag" formatted="false">#%s\n\n이 태그를 추천 합니다 (꺄아) 추천 받은 장소를 지금 바로 카카오내비에 추가해보세요.</string>
+    <string name="msg_share_tag_fail">태그 공유에 실패 하였습니다.</string>
+    <string name="msg_share_tag_default_param_fail">태그 공유에 실패 하였습니다.\n필수 정보가 존재하지 않습니다.</string>
+    <string name="msg_share_tag_uri_fail">태그 공유에 실패 하였습니다.\n태그 정보가 존재하지 않습니다.</string>
+    <string name="msg_share_tag_driving_fail">주행중에는 장소를 추가할 수 없습니다. 길안내 종료 후 다시 시도하세요.</string>
+    <string name="msg_share_poi_driving_fail">주행중에는 장소 공유를 받을 수 없습니다. 길안내 종료 후 다시 시도하세요.</string>
+    <string name="msg_event_driving_fail">주행중에는 이벤트 페이지로 이동할 수 없습니다. 길안내 종료 후 다시 시도하세요.</string>
+    <string name="msg_widget_setting_fail">주행중에는 위젯 설정을 할수 없습니다. 종료 후 다시 시도하세요.</string>
+    <string name="msg_alert_install_kakaotalk">최신 버전의 카카오톡이 필요합니다.</string>
+    <string name="msg_install_kakaotalk">카카오톡을 설치하시겠습니까?</string>
+
+    <!-- more -->
+    <string name="label_more_my_info">내 정보 / 차량 정보</string>
+    <string name="label_more_settings">환경 설정</string>
+    <string name="label_more_car">내 차 아이콘</string>
+    <string name="label_more_kakaoi">Kakao i 설정</string>
+    <string name="label_more_notice">공지사항</string>
+    <string name="label_more_addr_request">신규 장소 등록 제보</string>
+    <string name="label_more_error_report">오류 제보</string>
+    <string name="label_more_qna">문의하기</string>
+    <string name="label_more_curr_version">현재 버전</string>
+    <string name="label_more_curr_version_update">업데이트</string>
+    <string name="label_more_safe_drive_version">안전운전 버전</string>
+    <string name="label_more_view_type">화면 보기 설정</string>
+    <string name="label_more_add_search">다음 검색 등록</string>
+    <string name="label_more_map_setting_cloud">클라우드 지도</string>
+    <string name="label_more_map_setting_download">전체 지도 다운로드</string>
+    <string name="label_more_map_setting_delete_cache">지도 데이터(캐시) 삭제</string>
+    <string name="label_more_widget_add">위젯 추가하기</string>
+    <string name="label_more_widget_expectation_period">위젯 설정 주기</string>
+    <string name="label_half_hour">30분 주기</string>
+    <string name="label_one_hour">1시간 주기</string>
+    <string name="label_two_hour">2시간 주기</string>
+    <string name="label_three_hour">3시간 주기</string>
+    <string name="label_period">주기</string>
+    <string name="msg_more_map_setting_delete_cache">데이터를 삭제하시겠습니까?</string>
+    <string name="msg_more_map_setting_delete_cache_to_cloud">클라우드 지도로 변경됩니다.</string>
+    <string name="msg_more_error_report_empty">캡쳐된 오류 화면이 없습니다.\n주행화면의 ‘메뉴>오류제보’를 눌러주세요.</string>
+    <string name="msg_more_error_report_privacy">오류 제보 시, 타인의 개인정보가 노출되지 않도록 한번 더 유의해주세요.</string>
+    <string name="msg_more_error_report_image_delete_fail">오류제보 이미지 삭제에 실패하였습니다.</string>
+    <string name="msg_more_map_setting_cloud">가는 길에 필요한 지도만 실시간으로 다운받습니다. 항상 최신 상태를 유지할 수 있습니다. 정해진 구간을 자주 다닐 때 유리합니다.</string>
+    <string name="msg_more_error_network_connection_check_download_fail">네트워크 연결이 원활하지 않아 다운로드가 중단되었습니다.\n네트워크 상태를 확인해주세요.</string>
+    <string name="msg_more_map_setting_download">전체 지도를 미리 다운로드 받습니다. 이후에는 실시간 교통 정보만 추가로 다운로드됩니다. Wifi환경에서 다운로드 받기를 권장합니다.</string>
+    <string name="msg_more_map_setting_dialog_download">전체 지도를 다운로드 받을까요?\n파일 확인 후 지도 파일이 있으면 다시 다운로드 되지 않습니다.</string>
+    <string name="msg_more_map_setting_dialog_wifi">전체 지도는 용량이 매우 크기 때문에 Wi-Fi 환경을 권장합니다. 계속할까요?</string>
+    <string name="msg_more_map_setting_dialog_downloading">전체 지도를 다운로드 중입니다.</string>
+    <string name="msg_more_map_setting_dialog_download_done">지도 다운로드가 완료되었습니다. </string>
+    <string name="msg_more_map_setting_dialog_no_space">최소 500 MB 이상의 저장공간이 필요합니다. 확인 후 다시 시도해주세요.</string>
+    <string name="msg_more_map_setting_dialog_error">문제가 발생해 다운로드가 중단되었습니다. 다운로드를 다시 선택하면 이어서 받을 수 있습니다.</string>
+    <string name="msg_more_map_setting_dialog_canceled">다운로드가 취소되었습니다. 다운로드를 다시 선택하면 이어서 받을 수 있습니다.</string>
+    <string name="msg_more_map_setting_delete_cache_desc">클라우드 지도 또는 전체 지도 사용시 이전에 다운로드된 지도 데이터(캐시)를 삭제합니다. 이후 주행시 새로운 지도 데이터를 다운로드합니다.</string>
+    <string name="msg_more_map_setting_delete_cache_done">데이터(캐시)가 모두 삭제되었습니다.</string>
+    <string name="msg_more_voice_list_driving_fail">길안내 종료 후 다시 시도해 주세요.</string>
+    <string name="msg_more_voice_list_pre_play_fail">오류가 발생했습니다. 미리듣기를 이용할 수 없습니다.</string>
+    <string name="msg_more_widget_guide">위젯은 최대 3개까지 설정 가능합니다.</string>
+    <string name="msg_more_widget_add_info">위젯으로 등록할 장소가 포함되어 있는 태그를 선택하세요.</string>
+    <string name="msg_widget_current_position">현위치 부근입니다.</string>
+    <string name="msg_widget_add">위젯을 설정하여\n자주 가는곳을 등록해주세요.</string>
+    <string name="msg_widget_gps">GPS 정보가 수신되지 않습니다.\n기기의 GPS 수신 상태를 확인해 주세요.</string>
+    <string name="msg_widget_network">네트워크 연결 상태를 확인해 주세요.</string>
+    <string name="msg_more_widget_notice">위젯 추가하기 버튼을 눌러\n자주 찾는 장소를 추가해 주세요.\n추가된 장소까지의 소요 시간 정보를\n위젯 화면에서 상시 제공합니다.</string>
+    <string name="msg_widget_route_fail">예상 가능한 경로가 없습니다</string>
+
+    <!-- my info -->
+    <string name="label_more_myinfo_client_number">회원번호</string>
+    <string name="msg_more_myinfo_car_info_desc">정확한 통행 요금과 유가 정보를 알려 드리기 위해 필요합니다. 바이크 운전자는 \'이륜차\'를 선택해 주세요.</string>
+    <string name="label_more_myinfo_car_type">차종</string>
+    <string name="label_more_myinfo_oil_type">유종</string>
+    <string name="label_more_myinfo_total_distance">누적 주행 거리</string>
+    <string name="label_more_myinfo_month_distance">월 주행 거리</string>
+    <string name="label_more_myinfo_terms_service">서비스 이용약관</string>
+    <string name="label_more_myinfo_terms_gps">위치기반서비스 이용약관</string>
+    <string name="label_more_myinfo_terms_personal">개인정보 처리방침</string>
+    <string name="label_more_myinfo_opensource">오픈소스 라이선스</string>
+    <string name="label_more_myinfo_ad">맞춤형 광고 안내</string>
+    <string name="label_more_myinfo_withdraw">회원 탈퇴</string>
+    <string name="label_more_myinfo_logout">로그아웃</string>
+    <string name="label_more_myinfo_hipass">하이패스 장착</string>
+    <string name="label_more_myinfo_fee">통행 요금</string>
+    <string name="label_more_myinfo_fuel_price">유가 정보</string>
+    <string name="label_more_myinfo_t_account">카카오 T 계정 관리</string>
+    <string name="msg_more_myinfo_logout">로그아웃하시면, 검색 및 방문 기록이 삭제됩니다.\n정말로 로그아웃하시겠습니까?</string>
+    <string name="msg_more_myinfo_logout_fail_title">로그아웃 오류</string>
+    <string name="msg_more_myinfo_logout_fail">로그아웃에 실패하였습니다.\n다시 시도하시겠습니까?</string>
+    <string name="msg_more_myinfo_leave_fail_title">회원 탈퇴 오류</string>
+    <string name="msg_more_myinfo_leave_fail">회원 탈퇴에 실패하였습니다.\n다시 시도하시겠습니까?</string>
+    <string name="toast_user_id_copied">회원번호가 복사되었습니다.</string>
+    <string name="msg_more_myinfo_oil_type_alert">주유소 및 충전소 정보는 실제와 상이할 수 있습니다.</string>
+
+    <!-- 카카오 T 계정관리 -->
+    <string name="msg_more_t_account">카카오내비에서\n카카오T 계정을 연동하시겠습니까?</string>
+    <string name="label_more_t_account_yes">네, 계정 연동에 동의합니다.</string>
+    <string name="label_more_t_account_no">아니요. 다음에 할게요.</string>
+
+    <!-- 차종 -->
+    <string name="label_more_myinfo_car_one">1종(승용차/소형승합차/소형화물차)</string>
+    <string name="label_more_myinfo_car_two">2종(중형승합차/중형화물차)</string>
+    <string name="label_more_myinfo_car_three">3종(대형승합차/2축 대형화물차)</string>
+    <string name="label_more_myinfo_car_four">4종(3축 대형화물차)</string>
+    <string name="label_more_myinfo_car_five">5종(4축이상 특수화물차)</string>
+    <string name="label_more_myinfo_car_six">6종(경차)</string>
+    <string name="label_more_myinfo_car_bike">이륜차</string>
+
+    <!-- 유종 -->
+    <string name="label_more_myinfo_oil_gasoline">휘발유</string>
+    <string name="label_more_myinfo_oil_diesel">경유</string>
+    <string name="label_more_myinfo_oil_lpg">LPG</string>
+    <string name="label_more_myinfo_oil_electronic">전기</string>
+    <string name="label_more_myinfo_oil_premium">고급유</string>
+
+    <string name="label_electronic_fast_charge">급속</string>
+    <string name="label_electronic_slow_charge">완속</string>
+
+
+    <!-- setting voice -->
+    <string name="label_more_voice_choose">길안내 음성 변경하기</string>
+    <string name="label_more_voice_delete">길안내 음성 데이터(캐시) 삭제</string>
+    <string name="label_more_voice_volume">음량</string>
+    <string name="label_more_voice_exclude">음성 제외 옵션</string>
+    <string name="label_more_voice_exclude_area">방면 정보 안내 음성 제외</string>
+    <string name="label_more_voice_exclude_bump">과속 방지턱 안내 음성 제외</string>
+    <string name="label_more_voice_exclude_bus">버스전용차로 안내 음성 제외</string>
+    <string name="label_more_voice_exclude_warning">주의(위험) 지역 안내 음성 제외</string>
+    <string name="label_more_voice_exclude_traffic_change_info">교통 변화 안내 음성 제외</string>
+    <string name="msg_more_voice_choose_desc">뽀로로, 사투리, VJ특공대 등 다양한 안내 음성으로 즐겁고 안전한 드라이브 하세요!</string>
+    <string name="msg_more_voice_delete_desc">이전에 다운로드된 길안내 음성 데이터(캐시)를 삭제합니다.\n이후 길안내 음성 선택 시 새로운 길안내 음성 데이터를 다운로드합니다.</string>
+    <string name="msg_more_voice_list_header_download">다운로드 가능</string>
+    <string name="msg_more_voice_delete_voice">길안내 음성 데이터를 삭제 하시겠습니까?</string>
+
+    <!-- settings -->
+    <string name="label_setting_ar">AR내비게이션 주행 모드</string>
+    <string name="label_setting_highway_mode">고속도로 주행 모드</string>
+    <string name="label_setting_show_junction_image">교차로 상세 이미지 표시</string>
+    <string name="label_setting_detect_traffic">교통 변화 자동감지</string>
+    <string name="label_setting_show_direction">목적지 방향 표시</string>
+    <string name="label_setting_voice_area">방면정보 음성 안내</string>
+    <string name="label_setting_realtime_voice">실시간 다중 경로 안내</string>
+    <string name="label_setting_auto_volume">음악 재생시 자동 음량 조절</string>
+    <string name="label_setting_auto_safety_drive">안전 운전 자동 실행</string>
+    <string name="label_setting_night_mode">야간 모드</string>
+    <string name="label_setting_voice_reco_mode">음성검색</string>
+    <string name="label_setting_voice_gesture">음성인식 제스처</string>
+    <string name="label_setting_black_box">블랙박스 녹화</string>
+    <string name="label_setting_google_wear">구글웨어 길안내 연동</string>
+    <string name="label_setting_widget">주행중 간편 안내 위젯</string>
+    <string name="label_setting_on">켜짐</string>
+    <string name="label_setting_off">꺼짐</string>
+    <string name="label_setting_orientation">주행 화면 방향</string>
+    <string name="label_setting_simul_speed">시뮬 주행 속도</string>
+    <string name="label_setting_record">AR Record Mode</string>
+    <string name="label_setting_ardebug">AR Debug Mode</string>
+    <string name="label_setting_orientation_sensor">기기 설정에 따름</string>
+    <string name="label_setting_orientation_portrait">세로 상태 고정</string>
+    <string name="label_setting_orientation_landscape">가로 상태 고정</string>
+    <string name="label_setting_show_direction_view">화면 중앙 방향 표시</string>
+    <string name="label_setting_show_traffic_on_pan">지도 이동 시 교통 정보 표시</string>
+
+    <!-- setting auto start safety drive -->
+    <string name="msg_setting_auto_start_safety_drive_desc">앱 실행 후 일정 시간이 지나면\n\'안전 운전\'이 자동 실행됩니다.</string>
+
+    <!-- setting night mode -->
+    <string name="msg_setting_night_mode_desc">지도 색상을 어둡게 하여 야간 운전 시 눈부심을 줄여줍니다.</string>
+    <string name="label_setting_night_mode_set">야간 모드 사용</string>
+    <string name="label_setting_night_mode_start_time">시작 시간</string>
+    <string name="label_setting_night_mode_end_time">종료 시간</string>
+    <string name="label_setting_night_mode_day">오전</string>
+    <string name="label_setting_night_mode_night">오후</string>
+
+    <!-- setting VoiceReco -->
+    <string name="msg_setting_voice_reco_mode_desc">목적지를 말씀하시면 찾아 드립니다.</string>
+    <string name="msg_setting_voice_roce_mode_guide_msg_1">·음성 검색 이용을 위해서는 메인 화면에서 “안녕카카오”라고 외쳐주세요.</string>
+    <string name="msg_setting_voice_roce_mode_guide_msg_2">·음성검색 사용중에는 ‘음악어플리케이션’이나 ‘블루투스’ 사운드가 일시정지 되거나 볼륨이 낮아질 수 있습니다.</string>
+    <string name="msg_setting_voice_roce_mode_guide_msg_3">·저장한 장소가 일정 갯수 이상일 때, 사용빈도가 낮은 장소는 검색되지 않을 수 있습니다.</string>
+
+    <!-- setting voice gesture -->
+    <string name="label_setting_voice_gesture_sensor">근접센서</string>
+    <string name="label_setting_voice_gesture_feature">음성 인식 기능</string>
+    <string name="msg_setting_voice_gesture_desc">핸드폰 상단부의 근접센서에 손을 가까이 하시면\n손쉽게 음성 인식 기능을 이용할 수 있습니다.</string>
+
+    <!-- setting blackbox -->
+    <string name="label_setting_blackbox_use">블랙박스 녹화</string>
+    <string name="label_setting_blackbox_record_voice">음성 녹음</string>
+    <string name="label_setting_blackbox_record_size">녹화 사이즈</string>
+    <string name="label_setting_blackbox_encoder">인코더</string>
+    <string name="label_setting_blackbox_record_max">녹화 용량</string>
+    <string name="label_setting_blackbox_record_list">녹화 목록 %s</string>
+    <string name="label_setting_blackbox_delete_all">모두 삭제</string>
+    <string name="label_setting_blackbox_hours">시간 </string>
+    <string name="label_setting_blackbox_minutes">분 </string>
+    <string name="label_setting_blackbox_seconds">초</string>
+    <string name="msg_setting_blackbox_not_supported">블랙박스 기능이 지원되지 않는 기기입니다.</string>
+    <string name="msg_setting_blackbox_download_done_title">앨범에 저장되었습니다.</string>
+    <string name="msg_setting_blackbox_download_done_msg">원본 파일은 삭제되지 않습니다.</string>
+    <string name="msg_setting_blackbox_desc">설정된 녹화 용량을 초과하면 오래된 영상부터 차례대로 삭제됩니다.</string>
+    <string name="msg_setting_blackbox_framerate_desc">사용 중이신 단말에서 지원하는 동영상 녹화 프레임 입니다.</string>
+    <string name="msg_setting_blackbox_delete_msg">선택한 블랙박스 파일을 삭제합니다. 삭제된 파일은 복구할 수 없습니다.</string>
+    <string name="msg_setting_blackbox_kakaoi_setting">Kakao i 사용 시에는 블랙박스 음성 녹음을 사용할 수 없습니다. Kakao i를 끌까요? </string>
+
+    <!-- ar -->
+    <string name="msg_setting_ar_highway_mode">AR모드에서는 고속도로 주행 모드를 사용할 수 없습니다.</string>
+    <string name="msg_setting_ar_blackbox">AR모드에서는 블랙박스를 사용할 수 없습니다.</string>
+
+    <!-- blackbox encoder -->
+    <string name="label_setting_blackbox_encoder_mp4">MP4</string>
+    <string name="label_setting_blackbox_encoder_h264">H264</string>
+    <string name="label_setting_blackbox_encoder_h263">H263</string>
+
+    <!-- blackbox max size -->
+    <string name="label_setting_blackbox_max_500">500 MB</string>
+    <string name="label_setting_blackbox_max_1">1 GB</string>
+    <string name="label_setting_blackbox_max_2">2 GB</string>
+    <string name="label_setting_blackbox_max_4">4 GB</string>
+    <string name="label_setting_blackbox_max_70">최대</string>
+
+    <!-- blackbox dialog -->
+    <string name="label_setting_blackbox_option_play">재생</string>
+    <string name="label_setting_blackbox_option_download">다운로드</string>
+    <string name="label_setting_blackbox_option_delete">삭제</string>
+    <string name="label_setting_blackbox_option_cancel">취소</string>
+    <string name="msg_more_error_report_dialog_delete_message_video">삭제된 영상은 복구할 수 없습니다.</string>
+
+    <!-- 오류제보 -->
+    <string name="label_more_error_report_select_pic">제보할 사진 선택</string>
+    <string name="label_more_error_report_pic_chosen">개 사진 선택</string>
+    <string name="label_more_error_report_pic_chosen_format">%1$d장의 사진 제보</string>
+    <string name="label_more_error_report_pic_delete_chosen">선택한 사진 삭제</string>
+    <string name="label_more_error_report_report">제보하기</string>
+    <string name="label_more_error_report_select_type">유형 선택</string>
+    <string name="label_more_error_report_close">닫기</string>
+    <string name="label_more_error_report_start_poi">출발 장소</string>
+    <string name="label_more_error_report_start_addr">출발 주소</string>
+    <string name="label_more_error_report_dest_poi">도착 장소</string>
+    <string name="label_more_error_report_content_title">제보 내용</string>
+    <string name="msg_more_error_report_max">사진은 최대 3장까지 선택하실 수 있습니다.</string>
+    <string name="msg_more_error_report_dialog_delete_message">선택한 사진을 삭제할까요?</string>
+    <string name="msg_more_error_report_dialog_done_title">제보해 주셔서 감사합니다.</string>
+    <string name="msg_more_error_report_dialog_done_message">확인 후 적극 반영 하겠습니다.</string>
+    <string name="msg_more_error_report_dialog_fail_title">오류 제보가 실패하였습니다.</string>
+    <string name="msg_more_error_report_dialog_fail_message">오류 제보 중 에러가 발생하였습니다.</string>
+
+    <!-- 오류제보 유형 dialog -->
+    <string name="label_more_error_report_type_path">길안내 경로 오류</string>
+    <string name="label_more_error_report_type_regulation">단속 정보 오류</string>
+    <string name="label_more_error_report_type_road">도로 신설/폐쇄</string>
+    <string name="label_more_error_report_type_goal">목적지 위치 오류</string>
+
+    <!-- 탈퇴 -->
+    <string name="label_more_withdraw_dialog_positive">탈퇴</string>
+    <string name="msg_more_withdraw_dialog_title">탈퇴하기</string>
+    <string name="msg_more_withdraw_dialog_message">탈퇴시 모든 정보는 즉시 삭제됩니다.</string>
+    <string name="msg_more_withdraw_done_dialog_title">탈퇴되었습니다.</string>
+    <string name="msg_more_withdraw_done_dialog_message">앞으로 다시 만나게 되기를 기대합니다.</string>
+    <string name="msg_more_withdraw_done_dialog_ok">앱 초기화면으로 이동</string>
+
+    <string name="msg_more_withdraw_hint">탈퇴 이유를 적어주세요. (최대 100자)</string>
+    <string name="label_more_withdraw">카카오내비 탈퇴하기</string>
+    <string name="msg_more_withdraw_desc">카카오내비 탈퇴시, 동일 계정을 사용하는\nU+카카오내비 서비스에서도 동시에 탈퇴 됩니다.</string>
+    <string name="msg_more_withdraw_sub_desc">탈퇴 시 카카오내비, U+카카오내비의\n모든 정보는 즉시 삭제 됩니다.</string>
+
+    <!-- 화면 보기 설정 -->
+    <string name="label_view_type_beehive">벌집뷰</string>
+    <string name="label_view_type_list">목록뷰</string>
+    <string name="label_view_type_map">지도뷰</string>
+
+    <!-- 혜택존 -->
+    <string name="title_benefit">카카오내비 혜택</string>
+
+    <!-- 내 차 아이콘 -->
+    <string name="label_default_car">기본 아이콘</string>
+    <string name="label_default_car_for_log">기본내차아이콘</string>
+
+    <!-- api auth-->
+    <string name="toast_api_auth_error">카카오내비 인증에 실패하였습니다.</string>
+    <string name="toast_api_auth_error_params">카카오내비 인증에 실패하였습니다.\n필수 파라메터가 존재하지 않습니다.</string>
+    <string name="toast_api_auth_error_coord">카카오내비 인증에 실패하였습니다.\n좌표가 올바르지 않습니다.</string>
+    <string name="toast_api_not_supported">현재 버전에서 지원하지 않는 기능입니다.</string>
+
+    <!-- scheme -->
+    <string name="toast_scheme_uri_error">유효하지 않은 요청(URI)입니다.</string>
+    <string name="toast_scheme_uri_api_version_none">api version 정보 없음</string>
+    <string name="toast_scheme_uri_app_key_none">app key 정보 없음</string>
+    <string name="toast_scheme_uri_extras_none">extras 정보 없음</string>
+    <string name="toast_scheme_uri_projection_mode_not_supported">안드로이드 오토 연동 중에는 지원하지 않는 기능입니다.</string>
+
+    <!-- toast message -->
+    <string name="toast_back_key_again_termination">한 번 더 누르면 앱이 종료됩니다.</string>
+
+    <!-- hint -->
+    <string name="hint_main_seach">장소, 주소, 주변 검색</string>
+    <string name="hint_address_select">아래에서 선택하세요.</string>
+    <string name="hint_address_detail">상세 주소</string>
+    <string name="hint_input_tag_name">태그 이름을 입력하세요. 최대 30자</string>
+    <string name="hint_rename_tag_name">태그 이름을 변경합니다. 최대 30자</string>
+    <string name="hint_error_report_input_content">ex) 과속 단속 카메라 미등록</string>
+    <string name="hint_withdraw">최대 100자</string>
+
+    <!-- CommonWebChromeClient -->
+    <string name="label_cwcc_select_photo">사진 선택</string>
+    <string name="msg_cwcc_loading">로딩중입니다...</string>
+
+    <!-- 주변 정보 -->
+    <string name="label_destination_around_distance">거리</string>
+    <string name="label_destination_around_curr">현위치</string>
+    <string name="label_destination_around_over_20k">~이상</string>
+    <string name="label_destination_around_etc">기타</string>
+    <string name="label_destination_around_sort">정렬</string>
+    <string name="label_destination_around_sort_popular">인기순</string>
+    <string name="label_destination_around_sort_price">가격순</string>
+    <string name="label_destination_around_sort_near">가까운순</string>
+    <string name="label_destination_around_cate_fuel">주유소</string>
+    <string name="label_destination_around_cate_charge">충전소</string>
+    <string name="label_destination_around_cate_food">음식점</string>
+    <string name="label_destination_around_cate_coffee">카페</string>
+    <string name="label_destination_around_cate_parking">주차장</string>
+    <string name="label_destination_around_cate_travel">명소</string>
+    <string name="label_destination_around_cate_hotel">숙박</string>
+    <string name="label_destination_around_cate_garage">정비소</string>
+    <string name="label_destination_around_cate_mart">마트</string>
+    <string name="label_destination_around_cate_bank">은행</string>
+    <string name="label_destination_around_dialog_drive">도착지로</string>
+    <string name="label_destination_around_dialog_details">상세정보</string>
+    <string name="label_destination_around_dialog_parking">주차예약</string>
+    <string name="toast_change_done">변경완료</string>
+
+    <!-- 미래운행정보 -->
+    <string name="label_whenugo">미래운행정보</string>
+    <string name="label_whenugo_start">출발하면</string>
+    <string name="label_whenugo_sub_title">시간대별 예측</string>
+    <string name="label_whenugo_30">30분 후</string>
+    <string name="label_whenugo_60">1시간 후</string>
+    <string name="label_whenugo_90">1:30분 후</string>
+    <string name="label_whenugo_120">2시간 후</string>
+    <string name="label_time_ss">%d초</string>
+    <string name="label_time_mm">%d분</string>
+    <string name="label_time_hhmm" formatted="false">%d시간 %d분</string>
+    <string name="msg_whenugo_current_predict_time" formatted="false">%s 걸려요.</string>
+    <string name="msg_whenugo_error">일시적 오류입니다\n재시도해주세요</string>
+    <string name="time_format">aa h:mm</string>
+    <string name="date_format">M월 d일</string>
+    <string name="date_mon">(월)</string>
+    <string name="date_tues">(화)</string>
+    <string name="date_wed">(수)</string>
+    <string name="date_thu">(목)</string>
+    <string name="date_fri">(금)</string>
+    <string name="date_sat">(토)</string>
+    <string name="date_sun">(일)</string>
+    <string name="today">오늘</string>
+    <string name="year">년</string>
+    <string name="month">월</string>
+    <string name="date">일</string>
+    <string name="monday">월요일</string>
+    <string name="tuesday">화요일</string>
+    <string name="wednesday">수요일</string>
+    <string name="thursday">목요일</string>
+    <string name="friday">금요일</string>
+    <string name="saturday">토요일</string>
+    <string name="sunday">일요일</string>
+
+    <!-- Notification -->
+    <string name="noti_title">주행 정보</string>
+    <string name="noti_kakaot">KakaoT</string>
+
+    <!-- 대중교통 요약정보 -->
+    <string name="label_public_trans_path">대중교통 경로</string>
+
+    <!-- Route Info (Map) -->
+    <string name="msg_route_info_map_current_point_save">지정하신 위치를 저장할까요?</string>
+    <string name="msg_route_info_map_point_save">핀 위치가 변경되었습니다.\n변경된 위치를 저장할까요?</string>
+    <string name="msg_route_info_map_title_desc">지도를 움직여서 위치를 지정하세요.</string>
+    <string name="msg_route_info_map_add_via">변경한 핀 위치로\n경유지를 추가하시겠습니까?</string>
+    <string name="msg_route_info_map_change_via">변경한 핀 위치로\n경유지를 설정하시겠습니까?</string>
+    <string name="msg_route_info_map_add_via_limit">경유지는 최대 3개까지 추가할 수 있습니다.</string>
+    <string name="msg_route_info_map_change_destination">변경한 핀 위치로\n도착지를 변경하시겠습니까?</string>
+    <string name="msg_route_info_map_set_destination">변경한 핀 위치로\n도착지를 설정하시겠습니까?</string>
+    <string name="msg_route_info_map_current_set_destination">변경한 핀 위치를\n도착지로 설정하시겠습니까?</string>
+    <string name="label_route_info_map_save_poi">장소 저장</string>
+    <string name="label_route_info_map_add_via">경유지로 추가</string>
+    <string name="label_route_info_map_change_via">경유지로 설정</string>
+    <string name="label_route_info_map_change_destination">도착지로 변경</string>
+    <string name="label_route_info_map_set_destination">도착지로 설정</string>
+
+    <!-- 대안 목적지 -->
+    <string name="label_origin">[기존]</string>
+    <string name="label_recommend">[추천]</string>
+    <string name="label_change_destination">목적지 변경</string>
+    <string name="msg_alternative_destination"><![CDATA[보다 편안한 주차를 위해<br/><font color=#3183ea>다른 주차장을 추천</font> 드립니다.]]></string>
+    <string name="msg_alternative_destination_info">주차 원활 예상</string>
+
+    <string name="title_error_dialog">에러</string>
+    <string name="msg_network_error_dialog">통신 상태가 원활하지 않습니다.\n다시 시도해 주세요.</string>
+
+    <!-- 지도 뷰 -->
+    <string name="label_map_view_arrive_setting">도착지 설정</string>
+    <string name="label_map_view_arrive_text">도착지로</string>
+
+    <string name="full_route_activity_info">%s, %s</string>
+    <string name="full_route_activity_waypoint_dist">거리 %s</string>
+
+</resources>

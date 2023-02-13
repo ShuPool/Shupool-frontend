@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+// 선언 및 키값을 불러오기
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+android {
+    namespace 'com.hyundailogics.shupool'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.hyundailogics.shupool"
+        minSdk 23
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        // 프로젝트에서 사용
+        // 타입 - 키 - 값
+        buildConfigField "String", "REAL_APP_KEY", properties['REAL_APP_KEY']
+        buildConfigField "String", "VERSION_NAME", properties['VERSION_NAME']
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.preference:preference:1.2.0'
+    //kakao
+    implementation "com.kakao.sdk:v2-all:2.12.1" // 전체 모듈 설치, 2.11.0 버전부터 지원
+    implementation "com.kakao.sdk:v2-user:2.12.1" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.12.1" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.12.1" // 카카오스토리
+    implementation "com.kakao.sdk:v2-share:2.12.1" // 메시지(카카오톡 공유)
+    implementation "com.kakao.sdk:v2-navi:2.12.1" // 카카오내비
+    implementation "com.kakao.sdk:v2-friend:2.12.1" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
+    implementation("com.kakaomobility.knsdk:knsdk_ui:1.6.8-hotfix-01")
+
+}
