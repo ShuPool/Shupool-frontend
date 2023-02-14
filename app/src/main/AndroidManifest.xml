@@ -35,12 +35,12 @@
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
+        <activity
+            android:name=".activity.KNNaviActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale|layoutDirection|uiMode|smallestScreenSize|screenLayout|density"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>
