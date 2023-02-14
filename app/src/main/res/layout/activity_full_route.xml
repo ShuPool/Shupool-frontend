@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.kakaomobility.knsample.viewmodel.FullRouteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/layout_navi_size_174"
+            android:minHeight="?attr/actionBarSize"
+            android:background="#008577"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/mapview">
+
+            <RelativeLayout
+                android:id="@+id/waypoint_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/layout_navi_size_174"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="@{viewmodel.FullRouteInfoData.wayPoints.size() > 0 ? View.VISIBLE : View.GONE}" >
+
+                <include
+                    android:id="@+id/waypoint_layout_view"
+                    layout="@layout/view_full_route_waypoint"
+                    bind:value="@{viewmodel}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/prev"
+                android:layout_width="@dimen/layout_navi_size_45"
+                android:layout_height="@dimen/layout_navi_size_45"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="@{() -> viewmodel.onPrevEvent()}">
+
+                <ImageView
+                    android:layout_width="@dimen/layout_navi_size_25"
+                    android:layout_height="@dimen/layout_navi_size_25"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/view_fullroute_prev" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/goal_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/layout_navi_size_42"
+                android:visibility="@{viewmodel.FullRouteInfoData.wayPoints.size() > 0 ? View.GONE : View.VISIBLE}" >
+
+                <TextView
+                    android:id="@+id/goal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_navi_size_45"
+                    android:layout_toLeftOf="@+id/add_waypoint"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@{viewmodel.FullRouteInfoData.goalName}"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/layout_navi_size_16" />
+
+                <ImageButton
+                    android:id="@+id/add_waypoint"
+                    android:layout_width="@dimen/layout_navi_size_30"
+                    android:layout_height="@dimen/layout_navi_size_30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/add_waypoint_top_margin"
+                    android:layout_marginEnd="@dimen/layout_navi_size_8.5"
+                    android:layout_marginRight="@dimen/layout_navi_size_8.5"
+                    android:onClick="@{() -> viewmodel.onWayPointAddEvent()}"
+                    android:background="@drawable/view_fullroute_add"
+                    android:stateListAnimator="@null" />
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.kakaomobility.knsdk.map.knmapview.KNMapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_layout"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_layout" />
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_navi_size_50"
+            android:onClick="@{() -> viewmodel.onSelectGuideEvent(true)}"
+            android:background="#008577"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mapview"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_layout2">
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/layout_navi_size_10"
+                android:gravity="center_vertical"
+                android:text="@{@string/full_route_activity_info(viewmodel.FullRouteInfoData.pri_totalDist, viewmodel.FullRouteInfoData.pri_totalTime)}"
+                android:textColor="#000000"
+                android:textSize="@dimen/layout_navi_size_16"
+                android:visibility="@{viewmodel.FullRouteInfoData.pri_totalDist != null ? View.VISIBLE : View.GONE}"/>
+
+            <TextView
+                android:id="@+id/guide_start"
+                android:layout_width="@dimen/layout_navi_size_150"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/layout_navi_size_5"
+                android:layout_marginLeft="@dimen/layout_navi_size_10"
+                android:layout_marginTop="@dimen/layout_navi_size_5"
+                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                android:layout_marginBottom="@dimen/layout_navi_size_5"
+                android:background="@drawable/view_fullroute_rect"
+                android:gravity="center"
+                android:onClick="@{() -> viewmodel.onGuideStartEvent(true)}"
+                android:text="길안내 시작"
+                android:textColor="#000000"
+                android:textSize="@dimen/layout_navi_size_16" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_navi_size_50"
+            android:onClick="@{() -> viewmodel.onSelectGuideEvent(false)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottom_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="@{viewmodel.FullRouteInfoData.sec_totalDist != null ? View.VISIBLE : View.GONE}" >
+
+            <TextView
+                android:id="@+id/info2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/layout_navi_size_10"
+                android:gravity="center_vertical"
+                android:text="@{@string/full_route_activity_info(viewmodel.FullRouteInfoData.sec_totalDist, viewmodel.FullRouteInfoData.sec_totalTime)}"
+                android:textColor="#000000"
+                android:textSize="@dimen/layout_navi_size_16" />
+
+            <TextView
+                android:id="@+id/guide_start2"
+                android:layout_width="@dimen/layout_navi_size_150"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="@dimen/layout_navi_size_5"
+                android:layout_marginLeft="@dimen/layout_navi_size_10"
+                android:layout_marginTop="@dimen/layout_navi_size_5"
+                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                android:layout_marginBottom="@dimen/layout_navi_size_5"
+                android:background="@drawable/view_fullroute_rect"
+                android:gravity="center"
+                android:onClick="@{() -> viewmodel.onGuideStartEvent(false)}"
+                android:text="길안내 시작"
+                android:textColor="#000000"
+                android:textSize="@dimen/layout_navi_size_16" />
+
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

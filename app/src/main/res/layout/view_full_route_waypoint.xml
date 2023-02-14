@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="value"
+            type="com.kakaomobility.knsample.viewmodel.FullRouteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:background="#008577"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/start_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/layout_navi_size_42"
+                    android:layout_marginLeft="@dimen/layout_navi_size_42"
+                    android:layout_marginTop="@dimen/start_label_top_margin"
+                    android:text="@string/label_dest_info_start"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/layout_navi_size_14" />
+
+                <TextView
+                    android:id="@+id/txt_start_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/layout_navi_size_23.5"
+                    android:layout_marginStart="@dimen/layout_navi_size_10"
+                    android:layout_marginLeft="@dimen/layout_navi_size_10"
+                    android:layout_marginTop="@dimen/start_name_top_margin"
+                    android:layout_marginEnd="@dimen/layout_navi_size_45"
+                    android:layout_marginRight="@dimen/layout_navi_size_45"
+                    android:layout_toEndOf="@id/start_label"
+                    android:layout_toRightOf="@id/start_label"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="현재 위치"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/layout_navi_size_16" />
+
+                <RelativeLayout
+                    android:id="@+id/fullroute_waypoint_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_start_name">
+
+                    <LinearLayout
+                        android:id="@+id/waypoint_setting_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_navi_size_3"
+                        android:orientation="vertical">
+
+                        <!-- waypoint 1 : 길안내 정보 -->
+                        <LinearLayout
+                            android:id="@+id/waypoint_1_info_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_navi_size_27"
+                            android:layout_marginStart="@dimen/layout_navi_size_45"
+                            android:layout_marginLeft="@dimen/layout_navi_size_45"
+                            android:orientation="horizontal" >
+
+                            <View
+                                android:layout_width="@dimen/layout_navi_size_20"
+                                android:layout_height="match_parent"
+                                android:layerType="software"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/dash_line_vertical" />
+
+                            <TextView
+                                android:id="@+id/waypoint_1_info_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/layout_navi_size_15"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{value.FullRouteInfoData.wayPoints[0].time}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                            <View
+                                android:id="@+id/waypoint_1_info_line"
+                                android:layout_width="@dimen/layout_navi_size_1"
+                                android:layout_height="@dimen/layout_navi_size_8"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/layout_navi_size_5"
+                                android:layout_marginLeft="@dimen/layout_navi_size_5"
+                                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                                android:layout_marginRight="@dimen/layout_navi_size_5"
+                                android:alpha=".3"
+                                android:background="@color/bg_white" />
+
+                            <TextView
+                                android:id="@+id/waypoint_1_info_dist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{@string/full_route_activity_waypoint_dist(value.FullRouteInfoData.wayPoints[0].dist)}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                        </LinearLayout>
+
+                        <!-- 경유지 1 -->
+                        <RelativeLayout
+                            android:id="@+id/waypoint_1_info_name_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <ImageView
+                                android:id="@+id/waypoint_1_info_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_navi_size_34"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_45"
+                                android:layout_marginLeft="@dimen/layout_navi_size_45"
+                                android:background="#008577"
+                                android:src="@drawable/icon_waypoint_1" />
+
+                            <TextView
+                                android:id="@+id/waypoint_1_info_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_navi_size_35"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_71"
+                                android:layout_marginLeft="@dimen/layout_navi_size_71"
+                                android:layout_marginEnd="@dimen/layout_navi_size_47"
+                                android:layout_marginRight="@dimen/layout_navi_size_47"
+                                android:background="@drawable/bg_rect_blue_with_strok"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/layout_navi_size_8.5"
+                                android:paddingLeft="@dimen/layout_navi_size_8.5"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_14"
+                                android:text="@{value.FullRouteInfoData.wayPoints[0].name}"/>
+
+
+                            <ImageButton
+                                android:id="@+id/remove_waypoint_1"
+                                android:layout_width="@dimen/layout_navi_size_30"
+                                android:layout_height="@dimen/layout_navi_size_30"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/layout_navi_size_8.5"
+                                android:layout_marginRight="@dimen/layout_navi_size_8.5"
+                                android:onClick="@{() -> value.onWayPointRemoveEvent(0)}"
+                                android:background="@android:color/transparent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/view_fullroute_remove" />
+
+                        </RelativeLayout>
+
+                        <!-- waypoint 2 : 길안내 정보 -->
+                        <LinearLayout
+                            android:id="@+id/waypoint_2_info_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_navi_size_27"
+                            android:layout_marginStart="@dimen/layout_navi_size_45"
+                            android:layout_marginLeft="@dimen/layout_navi_size_45"
+                            android:orientation="horizontal"
+                            android:visibility="@{value.FullRouteInfoData.wayPoints.size() > 1 ? View.VISIBLE : View.GONE}" >
+
+                            <View
+                                android:layout_width="@dimen/layout_navi_size_20"
+                                android:layout_height="@dimen/layout_navi_size_27"
+                                android:layerType="software"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/dash_line_vertical" />
+
+                            <TextView
+                                android:id="@+id/waypoint_2_info_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/layout_navi_size_15"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{value.FullRouteInfoData.wayPoints[1].time}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+
+                            <View
+                                android:id="@+id/waypoint_2_info_line"
+                                android:layout_width="@dimen/layout_navi_size_1"
+                                android:layout_height="@dimen/layout_navi_size_8"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/layout_navi_size_5"
+                                android:layout_marginLeft="@dimen/layout_navi_size_5"
+                                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                                android:layout_marginRight="@dimen/layout_navi_size_5"
+                                android:alpha=".3"
+                                android:background="@color/bg_white" />
+
+                            <TextView
+                                android:id="@+id/waypoint_2_info_dist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{@string/full_route_activity_waypoint_dist(value.FullRouteInfoData.wayPoints[1].dist)}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                        </LinearLayout>
+
+                        <!-- 경유지 2 -->
+                        <RelativeLayout
+                            android:id="@+id/waypoint_2_info_name_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{value.FullRouteInfoData.wayPoints.size() > 1 ? View.VISIBLE : View.GONE}" >
+
+                            <ImageView
+                                android:id="@+id/waypoint_2_info_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_navi_size_34"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_45"
+                                android:layout_marginLeft="@dimen/layout_navi_size_45"
+                                android:background="#008577"
+                                android:src="@drawable/icon_waypoint_2" />
+
+                            <TextView
+                                android:id="@+id/waypoint_2_info_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_navi_size_35"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_71"
+                                android:layout_marginLeft="@dimen/layout_navi_size_71"
+                                android:layout_marginEnd="@dimen/layout_navi_size_47"
+                                android:layout_marginRight="@dimen/layout_navi_size_47"
+                                android:background="@drawable/bg_rect_blue_with_strok"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/layout_navi_size_8.5"
+                                android:paddingLeft="@dimen/layout_navi_size_8.5"
+                                android:text="@{value.FullRouteInfoData.wayPoints[1].name}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_14" />
+
+                            <ImageButton
+                                android:id="@+id/remove_waypoint_2"
+                                android:layout_width="@dimen/layout_navi_size_30"
+                                android:layout_height="@dimen/layout_navi_size_30"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/layout_navi_size_8.5"
+                                android:layout_marginRight="@dimen/layout_navi_size_8.5"
+                                android:onClick="@{() -> value.onWayPointRemoveEvent(1)}"
+                                android:background="@android:color/transparent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/view_fullroute_remove" />
+
+                        </RelativeLayout>
+
+                        <!-- waypoint 3 : 길안내 정보 -->
+                        <LinearLayout
+                            android:id="@+id/waypoint_3_info_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_navi_size_27"
+                            android:layout_marginStart="@dimen/layout_navi_size_45"
+                            android:layout_marginLeft="@dimen/layout_navi_size_45"
+                            android:orientation="horizontal"
+                            android:visibility="@{value.FullRouteInfoData.wayPoints.size() > 2 ? View.VISIBLE : View.GONE}" >
+
+                            <View
+                                android:layout_width="@dimen/layout_navi_size_20"
+                                android:layout_height="match_parent"
+                                android:layerType="software"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/dash_line_vertical" />
+
+                            <TextView
+                                android:id="@+id/waypoint_3_info_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/layout_navi_size_15"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{value.FullRouteInfoData.wayPoints[2].time}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                            <View
+                                android:id="@+id/waypoint_3_info_line"
+                                android:layout_width="@dimen/layout_navi_size_1"
+                                android:layout_height="@dimen/layout_navi_size_8"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/layout_navi_size_5"
+                                android:layout_marginLeft="@dimen/layout_navi_size_5"
+                                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                                android:layout_marginRight="@dimen/layout_navi_size_5"
+                                android:alpha=".3"
+                                android:background="@color/bg_white" />
+
+                            <TextView
+                                android:id="@+id/waypoint_3_info_dist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{@string/full_route_activity_waypoint_dist(value.FullRouteInfoData.wayPoints[2].dist)}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                        </LinearLayout>
+
+                        <!-- 경유지 3 -->
+                        <RelativeLayout
+                            android:id="@+id/waypoint_3_info_name_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="@{value.FullRouteInfoData.wayPoints.size() > 2 ? View.VISIBLE : View.GONE}" >
+
+                            <ImageView
+                                android:id="@+id/waypoint_3_info_number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/layout_navi_size_34"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_45"
+                                android:layout_marginLeft="@dimen/layout_navi_size_45"
+                                android:background="#008577"
+                                android:src="@drawable/icon_waypoint_3" />
+
+                            <TextView
+                                android:id="@+id/waypoint_3_info_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/layout_navi_size_35"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="@dimen/layout_navi_size_71"
+                                android:layout_marginLeft="@dimen/layout_navi_size_71"
+                                android:layout_marginEnd="@dimen/layout_navi_size_47"
+                                android:layout_marginRight="@dimen/layout_navi_size_47"
+                                android:background="@drawable/bg_rect_blue_with_strok"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/layout_navi_size_8.5"
+                                android:paddingLeft="@dimen/layout_navi_size_8.5"
+                                android:text="@{value.FullRouteInfoData.wayPoints[2].name}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_14" />
+
+                            <ImageButton
+                                android:id="@+id/remove_waypoint_3"
+                                android:layout_width="@dimen/layout_navi_size_30"
+                                android:layout_height="@dimen/layout_navi_size_30"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginEnd="@dimen/layout_navi_size_8.5"
+                                android:layout_marginRight="@dimen/layout_navi_size_8.5"
+                                android:onClick="@{() -> value.onWayPointRemoveEvent(2)}"
+                                android:background="@android:color/transparent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/view_fullroute_remove" />
+
+                        </RelativeLayout>
+
+                        <!-- waypoint 4 : 길안내 정보 -->
+                        <LinearLayout
+                            android:id="@+id/waypoint_4_info_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/layout_navi_size_27"
+                            android:layout_marginStart="@dimen/layout_navi_size_45"
+                            android:layout_marginLeft="@dimen/layout_navi_size_45"
+                            android:orientation="horizontal" >
+
+                            <View
+                                android:layout_width="@dimen/layout_navi_size_20"
+                                android:layout_height="match_parent"
+                                android:layerType="software"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/dash_line_vertical" />
+
+                            <TextView
+                                android:id="@+id/waypoint_4_info_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/layout_navi_size_15"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{value.fullRouteInfoData.goalTime}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                            <View
+                                android:id="@+id/waypoint_4_info_line"
+                                android:layout_width="@dimen/layout_navi_size_1"
+                                android:layout_height="@dimen/layout_navi_size_8"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="@dimen/layout_navi_size_5"
+                                android:layout_marginLeft="@dimen/layout_navi_size_5"
+                                android:layout_marginEnd="@dimen/layout_navi_size_5"
+                                android:layout_marginRight="@dimen/layout_navi_size_5"
+                                android:alpha=".3"
+                                android:background="@color/bg_white" />
+
+                            <TextView
+                                android:id="@+id/waypoint_4_info_dist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:alpha=".5"
+                                android:ellipsize="end"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="@{@string/full_route_activity_waypoint_dist(value.fullRouteInfoData.goalDist)}"
+                                android:textColor="#FFFFFF"
+                                android:textSize="@dimen/layout_navi_size_12" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/layout_navi_size_43"
+                    android:layout_below="@id/fullroute_waypoint_layout"
+                    android:layout_marginTop="@dimen/layout_navi_size_3"
+                    android:background="@android:color/transparent" />
+
+                <!-- 도착 라벨 -->
+                <TextView
+                    android:id="@+id/end_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fullroute_waypoint_layout"
+                    android:layout_marginStart="@dimen/layout_navi_size_42"
+                    android:layout_marginLeft="@dimen/layout_navi_size_42"
+                    android:layout_marginBottom="@dimen/layout_navi_size_16"
+                    android:text="@string/label_dest_info_arrive"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/layout_navi_size_14" />
+
+                <!-- 도착지명 -->
+                <TextView
+                    android:id="@+id/txt_goal_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/end_label"
+                    android:layout_toEndOf="@id/end_label"
+                    android:layout_marginLeft="@dimen/layout_navi_size_10"
+                    android:layout_marginStart="@dimen/layout_navi_size_10"
+                    android:layout_marginRight="@dimen/layout_navi_size_45"
+                    android:layout_marginEnd="@dimen/layout_navi_size_45"
+                    android:layout_alignBaseline="@id/end_label"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:text="@{value.fullRouteInfoData.goalName}"
+                    android:textSize="@dimen/layout_navi_size_16"
+                    android:textColor="#FFFFFF" />
+
+                <!-- 경유지 추가 버튼 -->
+                <ImageButton
+                    android:id="@+id/add_way_point"
+                    android:layout_width="@dimen/layout_navi_size_30"
+                    android:layout_height="@dimen/layout_navi_size_30"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/add_waypoint_top_margin"
+                    android:layout_marginEnd="@dimen/layout_navi_size_8.5"
+                    android:layout_marginRight="@dimen/layout_navi_size_8.5"
+                    android:background="@drawable/view_fullroute_add"
+                    android:onClick="@{() -> value.onWayPointAddEvent()}"
+                    android:visibility="@{value.FullRouteInfoData.wayPoints.size() > 2 ? View.GONE : View.VISIBLE}"
+                    android:stateListAnimator="@null" />
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/layout_navi_size_20"
+            android:layout_alignParentBottom="true"
+            android:background="#008577"
+            app:layout_constraintTop_toBottomOf="@+id/scroll_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
