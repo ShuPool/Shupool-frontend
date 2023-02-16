@@ -12,7 +12,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
 import com.hyundailogics.shupool.R
+import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.ActivityMainBinding
+import com.hyundailogics.shupool.fragment.FragmentFindLocationMarker
 import com.hyundailogics.shupool.fragment.FragmentMap
 import com.hyundailogics.shupool.fragment.FragmentSearch
 import com.hyundailogics.shupool.fragment.FragmentSearchListener
@@ -20,6 +22,7 @@ import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 
+const val fragmentMoveMapTag = "Move"
 const val fragmentMapTag = "Map"
 const val fragmentSearchTag = "Search"
 
@@ -60,20 +63,23 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
 
                     override fun onQueryTextSubmit(query: String?): Boolean {
                         (supportFragmentManager.findFragmentByTag(fragmentSearchTag) as FragmentSearch).reqSearch(query!!)
-
                         return false
                     }
                 })
             }
 
             it.setOnActionExpandListener(object : MenuItem.OnActionExpandListener {
+                val moveMarker = menu.findItem(R.id.move_map)
                 override fun onMenuItemActionExpand(p0: MenuItem): Boolean {
+                    moveMarker.isVisible=true
                     addFragment(binding.frameMainLayout.id, FragmentSearch(mode == DestinationSearch), fragmentSearchTag)
                     return true
                 }
 
                 override fun onMenuItemActionCollapse(p0: MenuItem): Boolean {
+
                     if (mode != WayPointSearch) {
+                        moveMarker.isVisible=false
                         removeFragment(supportFragmentManager.fragments.last())
                     } else {
                         finish()
@@ -97,6 +103,9 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             }
             R.id.action_search -> {
                 return true
+            }
+            R.id.move_map -> {
+                replaceFragment(binding.frameMainLayout.id, FragmentFindLocationMarker())
             }
         }
         return super.onOptionsItemSelected(item)
@@ -124,11 +133,11 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
                     startActivity(intent)
                 }
             }
-
             true
         }
     }
 
+    //앱 실행 시 처음 보는 화면 시작하는 함수
     private fun initFragments() {
         addFragment(binding.frameMainLayout.id, FragmentMap(), fragmentMapTag)
     }
@@ -153,6 +162,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         intent.putExtra("routeOption", routeOption)
         initForResult.launch(intent)
     }
+
     private val initForResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             when(result.resultCode) {
@@ -164,4 +174,19 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
                 }
             }
         }
+
+    override fun onBackPressed() {
+        if (mode == WayPointSearch) {
+            setResult(RESULT_CANCELED)
+            mMenu.findItem(R.id.action_search)?.collapseActionView()
+        }
+
+        super.onBackPressed()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        GlobalApplication.knsdk.sharedGuidance()?.stop()
+    }
+
 }

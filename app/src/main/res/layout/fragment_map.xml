@@ -57,37 +57,6 @@
             android:layout_above="@+id/theme_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <Switch
-                android:id="@+id/map_theme_styles"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="22dp"
-                android:text="맵 테마 [드라이브]"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <Switch
-                android:id="@+id/map_theme_color"
-                android:layout_marginBottom="22dp"
-                android:text="맵 테마 [주간]"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <Switch
-                android:id="@+id/route_theme_styles"
-                android:layout_marginBottom="22dp"
-                android:text="경로 테마 [드라이브]"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <Switch
-                android:id="@+id/route_theme_color"
-                android:text="경로 테마 [주간]"
-                android:textColor="@color/white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
         </LinearLayout>
     </RelativeLayout>
 </layout>
