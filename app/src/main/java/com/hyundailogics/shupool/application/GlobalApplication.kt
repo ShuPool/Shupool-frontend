@@ -3,7 +3,9 @@ package com.hyundailogics.shupool.application
 import android.app.Application
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import com.hyundailogics.shupool.utils.PreferenceUtil
+import com.kakao.sdk.common.util.Utility
 import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.KNSDK
 import com.kakaomobility.knsdk.KNSDKDelegate
@@ -27,7 +29,6 @@ class GlobalApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
         instance = this
 
         prefs = PreferenceUtil(this)

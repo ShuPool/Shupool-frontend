@@ -8,4 +8,11 @@
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
 
+    <item android:id="@+id/move_map"
+        android:icon="@drawable/marker_base_pin"
+        android:title="@string/move_marker"
+        android:visible="false"
+        app:showAsAction="always"
+        />
+
 </menu>

@@ -43,7 +43,6 @@ class FragmentMap : FragmentBaseMap(), KNGPSReceiver {
     }
 
     private fun bindThemeActionButton(binding: FragmentMapBinding) {
-        bindingThemeControl(binding)
         binding.themeChange.setOnClickListener {
             binding.themePannel.visibility = if (binding.themePannel.visibility == View.GONE) {
                 View.VISIBLE
@@ -52,49 +51,6 @@ class FragmentMap : FragmentBaseMap(), KNGPSReceiver {
             }
         }
     }
-
-    private fun bindingThemeControl(binding: FragmentMapBinding) {
-        binding.mapThemeStyles.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                binding.mapThemeStyles.text = "맵 테마 [검색]"
-            } else {
-                binding.mapThemeStyles.text = "맵 테마 [드라이브]"
-            }
-        }
-
-        binding.mapThemeColor.setOnCheckedChangeListener { _, isChecked ->
-            if (binding.mapThemeStyles.isChecked) {
-            } else {
-            }
-
-            if (isChecked) {
-                binding.mapThemeColor.text = "맵 테마 [야간]"
-            } else {
-                binding.mapThemeColor.text = "맵 테마 [주간]"
-            }
-        }
-
-        binding.routeThemeStyles.setOnCheckedChangeListener { _, isChecked ->
-            if (isChecked) {
-                binding.routeThemeStyles.text = "경로 테마 [트래픽]"
-            } else {
-                binding.routeThemeStyles.text = "경로 테마 [드라이브]"
-            }
-        }
-
-        binding.routeThemeColor.setOnCheckedChangeListener { _, isChecked ->
-            if (binding.routeThemeStyles.isChecked) {
-            } else {
-            }
-
-            if (isChecked) {
-                binding.routeThemeColor.text = "경로 테마 [야간]"
-            } else {
-                binding.routeThemeColor.text = "경로 테마 [주간]"
-            }
-        }
-    }
-
     private fun bindTestActionButton(mapView: KNMapView, imageView: ImageView,
                                      binding: FragmentMapBinding) {
         activity?.let { active ->
