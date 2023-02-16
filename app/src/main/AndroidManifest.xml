@@ -35,7 +35,10 @@
 
         <activity
             android:name=".activity.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale|layoutDirection|uiMode|smallestScreenSize|screenLayout|density"
             android:exported="true">
+
         </activity>
 
         <activity
