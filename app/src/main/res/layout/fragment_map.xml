@@ -17,27 +17,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/test_action_btn"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:src ="@drawable/img_toast_tube_1" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/theme_change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_above="@+id/test_action_btn"
-            android:layout_marginRight="25dp"
-            android:src ="@drawable/img_toast_frodo_1" />
+            />
 
         <LinearLayout
             android:visibility="gone"
@@ -54,7 +35,6 @@
             android:paddingRight="10dp"
             android:paddingBottom="35dp"
             android:gravity="right"
-            android:layout_above="@+id/theme_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         </LinearLayout>

@@ -5,12 +5,17 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.MotionEvent
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
+import androidx.core.view.MotionEventCompat
 import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.ActivityMainBinding
@@ -30,16 +35,18 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
     private lateinit var mMenu: Menu
     private lateinit var binding: ActivityMainBinding
     private var mode = DestinationSearch
+    var imm : InputMethodManager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         super.initialize()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         initToolBar()
         initNavigationView()
         initFragments()
     }
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         mode = intent?.getIntExtra("mode", DestinationSearch) ?: DestinationSearch
@@ -105,7 +112,8 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
                 return true
             }
             R.id.move_map -> {
-                replaceFragment(binding.frameMainLayout.id, FragmentFindLocationMarker())
+                hideKeyborad(binding.frameMainLayout)
+                addFragment(binding.frameMainLayout.id, FragmentFindLocationMarker(), fragmentMoveMapTag)
             }
         }
         return super.onOptionsItemSelected(item)
@@ -137,7 +145,6 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         }
     }
 
-    //앱 실행 시 처음 보는 화면 시작하는 함수
     private fun initFragments() {
         addFragment(binding.frameMainLayout.id, FragmentMap(), fragmentMapTag)
     }
@@ -177,16 +184,24 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
 
     override fun onBackPressed() {
         if (mode == WayPointSearch) {
+            Log.v("창 닫음", "창 닫음")
             setResult(RESULT_CANCELED)
             mMenu.findItem(R.id.action_search)?.collapseActionView()
         }
-
+        Log.v("창 닫음", "if 안걸림")
         super.onBackPressed()
     }
 
     override fun onDestroy() {
         super.onDestroy()
         GlobalApplication.knsdk.sharedGuidance()?.stop()
+    }
+
+    //키보드 숨기기
+    fun hideKeyborad(v: View) {
+        if(v != null) {
+            imm?.hideSoftInputFromWindow(v.windowToken, 0)
+        }
     }
 
 }
