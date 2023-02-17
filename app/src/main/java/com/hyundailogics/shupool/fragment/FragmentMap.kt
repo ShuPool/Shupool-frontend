@@ -1,14 +1,17 @@
 package com.hyundailogics.shupool.fragment
 
 import android.content.res.Configuration
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
+import androidx.core.content.res.ResourcesCompat
 import com.hyundailogics.shupool.databinding.FragmentMapBinding
 import com.kakaomobility.knsdk.KNSDK
+import com.kakaomobility.knsdk.R
 import com.kakaomobility.knsdk.common.gps.*
 import com.kakaomobility.knsdk.common.util.FloatPoint
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
@@ -18,7 +21,6 @@ class FragmentMap : FragmentBaseMap(), KNGPSReceiver {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val binding = FragmentMapBinding.inflate(inflater)
         initMapView(binding.mapView)
-        bindTestActionButton(binding.mapView, binding.staticImage, binding)
         return binding.root
     }
 
@@ -33,29 +35,17 @@ class FragmentMap : FragmentBaseMap(), KNGPSReceiver {
             //카카오 판교 본사 좌표
             val center = WGS84ToKATEC(127.11019081347423,37.3941851228957)
 
+            //사용자 설정 아이콘을 위한 부분
+            val drawable: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.icon_here, null)
+            val bitmapDrawable = drawable as BitmapDrawable
+            val icon_here = bitmapDrawable.bitmap
+
             mapView.moveCamera(KNMapCameraUpdate.targetTo(lastPos).zoomTo(2.5f), false)
             mapView.userLocation?.apply {
+                icon = icon_here
                 isVisible = true
                 isVisibleGuideLine = true
                 coordinate = lastPos
-            }
-        }
-    }
-
-    private fun bindThemeActionButton(binding: FragmentMapBinding) {
-        binding.themeChange.setOnClickListener {
-            binding.themePannel.visibility = if (binding.themePannel.visibility == View.GONE) {
-                View.VISIBLE
-            } else {
-                View.GONE
-            }
-        }
-    }
-    private fun bindTestActionButton(mapView: KNMapView, imageView: ImageView,
-                                     binding: FragmentMapBinding) {
-        activity?.let { active ->
-            binding.testActionBtn.setOnClickListener {
-
             }
         }
     }

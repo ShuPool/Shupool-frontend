@@ -1,25 +1,27 @@
 package com.hyundailogics.shupool.fragment
 
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.constraintlayout.widget.ConstraintSet.Motion
+import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.databinding.FragmentFindLocationMarkerBinding
 import com.kakaomobility.knsdk.KNSDK
 import com.kakaomobility.knsdk.common.gps.KATECToWGS84
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_X
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_Y
-import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.util.FloatPoint
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
 import com.kakaomobility.knsdk.map.knmapview.KNMapView
 import com.kakaomobility.knsdk.map.uicustomsupport.renewal.KNMapMarker
 import kotlin.math.roundToInt
 import kotlin.random.Random
+
 
 class FragmentFindLocationMarker() : FragmentBaseMap() {
     lateinit var binding: FragmentFindLocationMarkerBinding
@@ -31,9 +33,18 @@ class FragmentFindLocationMarker() : FragmentBaseMap() {
     ): View {
         binding = FragmentFindLocationMarkerBinding.inflate(inflater)
         initMapView(binding.mapView)
+
+        val view = inflater.inflate(R.layout.fragment_find_location_marker, container, false)
+
+        view.setOnTouchListener { v, event ->
+            if (event?.action == MotionEvent.ACTION_UP) {
+                Log.v("로그", "손가락 뗌")
+                v.performClick()
+            }
+            true
+        }
         return binding.root
     }
-
 
     private val basicLocationMarkerPriority = 10
 
@@ -56,7 +67,6 @@ class FragmentFindLocationMarker() : FragmentBaseMap() {
             val lastPos = KNSDK.sharedGpsManager()?.lastValidGpsData?.pos ?: FloatPoint(
                 KN_DEFAULT_POS_X.toFloat(), KN_DEFAULT_POS_Y.toFloat())
             mapView.moveCamera(KNMapCameraUpdate.targetTo(lastPos).zoomTo(2.5f), false)
-
         }
     }
 
@@ -78,43 +88,5 @@ class FragmentFindLocationMarker() : FragmentBaseMap() {
         }
     }
 
-    // MARK: - [마커 추가]
-    private fun addMarker() {
-        KNMapMarker(mapView.coordinate).apply {
-            tag = basicLocationMarkerId
-            priority = basicLocationMarkerPriority
-//            setVisibleRange(.1f, 30f)
-            markerMap[tag] = this
-            mapView.addMarker(this)
-        }
-    }
 
-    // MARK: - [마커 제거]
-    private fun removeMarker() {
-        mapView.removeMarkersAll()
-    }
-
-    // MARK: - [마커 이동]
-    private fun moveCoordinateMarker() {
-        markerMap[basicLocationMarkerId]?.apply {
-            val x = rand.nextInt(-50,50)
-            val y = rand.nextInt(-50,50)
-            animate(FloatPoint(this.coordinate.x + x, this.coordinate.y + y), 1000L)
-        }
-    }
-
-    // MARK: - [유저 로케이션 이동]
-    private fun moveUserLocation() {
-        mapView.userLocation?.apply {
-            isVisible = true
-            val pos = FloatPoint(mapView.coordinate.x + rand.nextInt(-50, 50), mapView.coordinate.y + rand.nextInt(-50, 50))
-            val angles = (angle + rand.nextInt(0, 50)) % 360
-            if (withCamera) {
-                mapView.animateCamera(KNMapCameraUpdate.targetTo(pos).bearingTo(angles),500L, true)
-            } else {
-                animate(pos, angles)
-            }
-            withCamera = !withCamera
-        }
-    }
 }

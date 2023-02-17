@@ -86,7 +86,7 @@ class FragmentSearch(searchGoal: Boolean = true) : Fragment() {
             binding.recyclerView.adapter = FragmentSearchAdapter(object : FragmentSearchAdapterListener {
                 override fun onItemClick(poi: KNSearchPOI) {
                     //도착 눌렀을때
-//                    mListener?.onSearchResult(poi)
+//                    mListener?.onSearchResult(poi) //길안내로 바로 넘어감
                     if (isSearchGoal) {
                         binding.routeOptionList.visibility = View.VISIBLE
                         (binding.routeOptionList.adapter as routeOptionAdapter).setSearchPoi(poi)
