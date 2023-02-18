@@ -184,11 +184,11 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
 
     override fun onBackPressed() {
         if (mode == WayPointSearch) {
-            Log.v("창 닫음", "창 닫음")
+            Log.d("창 닫음", "창 닫음")
             setResult(RESULT_CANCELED)
             mMenu.findItem(R.id.action_search)?.collapseActionView()
         }
-        Log.v("창 닫음", "if 안걸림")
+        Log.d("창 닫음", "if 안걸림")
         super.onBackPressed()
     }
 

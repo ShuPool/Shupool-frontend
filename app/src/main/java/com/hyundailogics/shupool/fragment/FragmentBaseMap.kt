@@ -21,7 +21,6 @@ open class FragmentBaseMap: Fragment() {
 
         applyMapSettings()
     }
-
     @ObsoleteCoroutinesApi
     private fun applyMapSettings() {
         var isDisplayType: Boolean
