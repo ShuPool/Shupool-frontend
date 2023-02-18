@@ -21,6 +21,7 @@ android {
         // 타입 - 키 - 값
         buildConfigField "String", "REAL_APP_KEY", properties['REAL_APP_KEY']
         buildConfigField "String", "VERSION_NAME", properties['VERSION_NAME']
+        buildConfigField "String", "REST_API_KEY", properties['REST_API_KEY']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

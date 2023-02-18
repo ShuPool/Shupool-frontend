@@ -58,7 +58,6 @@ class FullRouteActivity : BaseActivity(), KNMapViewEventListener, KNMarkerEventL
     private var showBuilding = false
     private var isLangType = true
 
-    @ObsoleteCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initBindingComponent()
