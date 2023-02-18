@@ -8,21 +8,16 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.GravityCompat
-import androidx.core.view.MotionEventCompat
 import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.ActivityMainBinding
-import com.hyundailogics.shupool.fragment.FragmentFindLocationMarker
-import com.hyundailogics.shupool.fragment.FragmentMap
-import com.hyundailogics.shupool.fragment.FragmentSearch
-import com.hyundailogics.shupool.fragment.FragmentSearchListener
+import com.hyundailogics.shupool.fragment.*
 import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
@@ -36,29 +31,32 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
     private lateinit var binding: ActivityMainBinding
     private var mode = DestinationSearch
     var imm : InputMethodManager? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         super.initialize()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         initToolBar()
         initNavigationView()
         initFragments()
     }
 
+
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         mode = intent?.getIntExtra("mode", DestinationSearch) ?: DestinationSearch
         if (mode == WayPointSearch) {
-            mMenu.performIdentifierAction(R.id.action_search, 0)
+            mMenu.performIdentifierAction(R.id.start_search, 0)
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
 
-        menu?.findItem(R.id.action_search)?.let {
+        menu?.findItem(R.id.start_search)?.let {
             (it.actionView as SearchView).apply {
                 setSearchableInfo((getSystemService(Context.SEARCH_SERVICE) as SearchManager).getSearchableInfo(componentName))
                 isSubmitButtonEnabled = true
@@ -98,7 +96,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         }
 
         if (mode == WayPointSearch) {
-            mMenu.performIdentifierAction(R.id.action_search, 0)
+            mMenu.performIdentifierAction(R.id.start_search, 0)
         }
 
         return true
@@ -108,7 +106,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             android.R.id.home -> {
                 binding.drawerLayout.openDrawer(GravityCompat.START)
             }
-            R.id.action_search -> {
+            R.id.start_search -> {
                 return true
             }
             R.id.move_map -> {
@@ -133,12 +131,15 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
 
             when (menuItem.itemId) {
                 R.id.main_drawer_item_search -> {
-                    mMenu.performIdentifierAction(R.id.action_search, 0)
+                    mMenu.performIdentifierAction(R.id.start_search, 0)
                 }
 
                 R.id.main_drawer_item_dguide -> {
                     val intent = Intent(this, KNNaviActivity::class.java)
                     startActivity(intent)
+                }
+                R.id.main_drawer_driver_test -> {
+                    addFragment(binding.frameMainLayout.id, FragmentDriverRoute(), "Test")
                 }
             }
             true
@@ -158,7 +159,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             val intent : Intent = intent.putExtra("wayPoint", via)
             setResult(RESULT_OK, intent)
 
-            mMenu.findItem(R.id.action_search)?.collapseActionView()
+            mMenu.findItem(R.id.start_search)?.collapseActionView()
         }
     }
     private fun viewFullRoute(poi: KNSearchPOI, avoidOption: Int, routeOption: KNRoutePriority?) {
@@ -174,7 +175,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             when(result.resultCode) {
                 Activity.RESULT_OK -> {
-                    mMenu.findItem(R.id.action_search)?.collapseActionView()
+                    mMenu.findItem(R.id.start_search)?.collapseActionView()
                 }
 
                 Activity.RESULT_CANCELED -> {
@@ -184,11 +185,9 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
 
     override fun onBackPressed() {
         if (mode == WayPointSearch) {
-            Log.d("창 닫음", "창 닫음")
             setResult(RESULT_CANCELED)
-            mMenu.findItem(R.id.action_search)?.collapseActionView()
+            mMenu.findItem(R.id.start_search)?.collapseActionView()
         }
-        Log.d("창 닫음", "if 안걸림")
         super.onBackPressed()
     }
 
