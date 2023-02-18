@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="main">#FDDC3F</color>
+
     <!-- base color -->
     <color name="base_bg_color">#3183ea</color>
     <color name="base_text_color">#2988ff</color>
