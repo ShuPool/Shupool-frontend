@@ -62,6 +62,8 @@ dependencies {
     implementation "com.kakao.sdk:v2-share:2.12.1" // 메시지(카카오톡 공유)
     implementation "com.kakao.sdk:v2-navi:2.12.1" // 카카오내비
     implementation "com.kakao.sdk:v2-friend:2.12.1" // 카카오톡 소셜 피커, 리소스 번들 파일 포함
-    implementation("com.kakaomobility.knsdk:knsdk_ui:1.6.8-hotfix-01")
+    implementation "com.kakaomobility.knsdk:knsdk_ui:1.6.8-hotfix-01"
+    implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.2.1'
+
 
 }
