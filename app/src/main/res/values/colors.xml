@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="main">#FDDC3F</color>
+    <color name="dark_gray">#515151</color>
+    <color name="gray">#898888</color>
+    <color name="light_gray">#B7B7B7</color>
 
     <!-- base color -->
     <color name="base_bg_color">#3183ea</color>
