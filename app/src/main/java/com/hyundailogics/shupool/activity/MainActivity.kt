@@ -182,6 +182,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             }
         }
 
+//    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         if (mode == WayPointSearch) {
             Log.v("창 닫음", "창 닫음")

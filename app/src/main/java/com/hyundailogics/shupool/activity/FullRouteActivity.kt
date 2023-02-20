@@ -58,7 +58,7 @@ class FullRouteActivity : BaseActivity(), KNMapViewEventListener, KNMarkerEventL
     private var showBuilding = false
     private var isLangType = true
 
-    @ObsoleteCoroutinesApi
+//    @ObsoleteCoroutinesApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initBindingComponent()
@@ -346,6 +346,7 @@ class FullRouteActivity : BaseActivity(), KNMapViewEventListener, KNMarkerEventL
         finish()
     }
 
+//    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         binding.mapview.onPause()
         setResult(RESULT_CANCELED)

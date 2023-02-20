@@ -15,7 +15,7 @@ open class FragmentBaseMap: Fragment() {
     @Suppress("PropertyName")
     protected val KN_MAP_SCALE_TABLE = arrayOf(floatArrayOf(0.6f, 0.6f, 1.0f, 1.51f, 2.1f, 3.01f, 3.5f), floatArrayOf(0.75f, 1.0f, 1.51f, 2.1f, 3.01f, 3.01f, 3.5f))
 
-    @ObsoleteCoroutinesApi
+//    @ObsoleteCoroutinesApi
     override fun onResume() {
         super.onResume()
 
