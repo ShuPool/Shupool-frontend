@@ -7,14 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.hyundailogics.shupool.BuildConfig
 import com.hyundailogics.shupool.apitest.KakaoAPI
 import com.hyundailogics.shupool.apitest.ResultAddress
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.FragmentFindLocationMarkerBinding
 import com.kakaomobility.knsdk.KNSDK
-import com.kakaomobility.knsdk.common.gps.KATECToWGS84
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_X
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_Y
 import com.kakaomobility.knsdk.common.util.DoublePoint
@@ -23,7 +21,6 @@ import com.kakaomobility.knsdk.common.util.IntPoint
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
 import com.kakaomobility.knsdk.map.knmapview.KNMapView
 import com.kakaomobility.knsdk.map.knmapview.idl.KNMapViewEventListener
-import com.kakaomobility.knsdk.map.uicustomsupport.renewal.KNMapMarker
 import com.kakaomobility.knsdk.trip.kntrip.knroute.KNRoute
 import retrofit2.Call
 import retrofit2.Callback
@@ -31,7 +28,6 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import kotlin.math.roundToInt
-import kotlin.random.Random
 
 
 class FragmentFindLocationMarker() : FragmentBaseMap(), KNMapViewEventListener {
@@ -51,18 +47,10 @@ class FragmentFindLocationMarker() : FragmentBaseMap(), KNMapViewEventListener {
     ): View {
         binding = FragmentFindLocationMarkerBinding.inflate(inflater)
         initMapView(binding.mapView)
+        binding.mapView.mapViewEventListener = this@FragmentFindLocationMarker
 
         return binding.root
     }
-
-    private val basicLocationMarkerPriority = 10
-
-    private val basicLocationMarkerId = 0
-
-    private val markerMap = hashMapOf<Int, KNMapMarker>()
-    private val rand = Random(2000)
-
-    private var withCamera = false
 
     private fun initMapView(mapView: KNMapView) {
         KNSDK.makeMapViewWithFrame(mapView) { error ->
@@ -72,29 +60,9 @@ class FragmentFindLocationMarker() : FragmentBaseMap(), KNMapViewEventListener {
                 return@makeMapViewWithFrame
             }
 
-            binding.mapView.mapViewEventListener = this@FragmentFindLocationMarker
-            this@FragmentFindLocationMarker.mapView = mapView
             val lastPos = KNSDK.sharedGpsManager()?.lastValidGpsData?.pos ?: FloatPoint(
                 KN_DEFAULT_POS_X.toFloat(), KN_DEFAULT_POS_Y.toFloat())
             mapView.moveCamera(KNMapCameraUpdate.targetTo(lastPos).zoomTo(2.5f), false)
-        }
-    }
-
-    //[좌표 표시]
-    private fun showWGS84() {
-        activity?.apply {
-            mapView.getMapToCenter().let {pos ->
-                val point = KATECToWGS84(pos.x.roundToInt(),pos.y.roundToInt())
-                val alerts = AlertDialog.Builder(this)
-                    .setTitle("현재 위치")
-                    .setMessage("longitude: ${point.x}\nlatitude: ${point.y}")
-                alerts.setCancelable(true)
-                alerts.setNegativeButton("close")
-                { dialog, _ ->
-                    dialog.dismiss()
-                }
-                alerts.create().show()
-            }
         }
     }
 
