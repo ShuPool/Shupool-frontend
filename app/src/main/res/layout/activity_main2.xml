@@ -40,7 +40,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/driverButton"
         android:layout_width="210dp"
-        android:layout_height="402dp"
+        android:layout_height="440dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="0dp"
@@ -55,7 +55,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/crewButton"
         android:layout_width="210dp"
-        android:layout_height="402dp"
+        android:layout_height="440dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="0dp"
         android:backgroundTint="@color/black"
@@ -76,6 +76,15 @@
         android:background="@drawable/street"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/driverButton" />
+
+    <ImageView
+        android:id="@+id/dashLine3"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/dash_line_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
