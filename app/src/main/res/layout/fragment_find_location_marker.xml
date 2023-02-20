@@ -39,20 +39,7 @@
             app:layout_constraintStart_toStartOf="@+id/mapView"
             />
 
-        <TextView
-            android:id="@+id/poi_address"
-            android:layout_width="match_parent"
-            android:layout_height="18dp"
-            android:background="@color/white"
-            android:textColor="@color/bg_gray"
-            android:textSize="13sp"
-            android:gravity="center_vertical"
-            android:text = "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

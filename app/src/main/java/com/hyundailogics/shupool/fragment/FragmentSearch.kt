@@ -13,7 +13,6 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -27,11 +26,11 @@ import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 import com.kakaomobility.knsdk.common.util.IntPoint
 import java.lang.RuntimeException
 
-const val SEARCH_POI_COUNT_PER_PAGE = 15
+//const val SEARCH_POI_COUNT_PER_PAGE = 15
 
-interface FragmentSearchListener {
-    fun onSearchResult(poi: KNSearchPOI, avoidOption: Int = 0, routeOption: KNRoutePriority? = null)
-}
+//interface FragmentSearchListener {
+//    fun onSearchResult(poi: KNSearchPOI, avoidOption: Int = 0, routeOption: KNRoutePriority? = null)
+//}
 
 class FragmentSearch(searchGoal: Boolean = true) : Fragment() {
 

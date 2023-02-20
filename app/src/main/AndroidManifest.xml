@@ -45,6 +45,11 @@
             android:name=".activity.KNNaviActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale|layoutDirection|uiMode|smallestScreenSize|screenLayout|density"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name=".activity.FullRouteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale|layoutDirection|uiMode|smallestScreenSize|screenLayout|density"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
 
 </manifest>

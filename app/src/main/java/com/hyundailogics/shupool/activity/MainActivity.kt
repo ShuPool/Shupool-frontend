@@ -10,6 +10,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
@@ -21,10 +22,12 @@ import com.hyundailogics.shupool.fragment.*
 import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
+import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 const val fragmentMoveMapTag = "Move"
 const val fragmentMapTag = "Map"
 const val fragmentSearchTag = "Search"
+const val fragmentDriverRouteTag = "Drive"
 
 class MainActivity : BaseActivity(), FragmentSearchListener {
     private lateinit var mMenu: Menu
@@ -38,25 +41,27 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as InputMethodManager?
         initToolBar()
         initNavigationView()
         initFragments()
-    }
 
+    }
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
         mode = intent?.getIntExtra("mode", DestinationSearch) ?: DestinationSearch
         if (mode == WayPointSearch) {
-            mMenu.performIdentifierAction(R.id.start_search, 0)
+            mMenu.performIdentifierAction(R.id.search_start, 0)
         }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
 
-        menu?.findItem(R.id.start_search)?.let {
+        menu?.findItem(R.id.search_start)?.let {
             (it.actionView as SearchView).apply {
                 setSearchableInfo((getSystemService(Context.SEARCH_SERVICE) as SearchManager).getSearchableInfo(componentName))
                 isSubmitButtonEnabled = true
@@ -67,7 +72,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
                     }
 
                     override fun onQueryTextSubmit(query: String?): Boolean {
-                        (supportFragmentManager.findFragmentByTag(fragmentSearchTag) as FragmentSearch).reqSearch(query!!)
+                        (supportFragmentManager.findFragmentByTag(fragmentDriverRouteTag) as FragmentDriverRoute).reqSearch(query!!)
                         return false
                     }
                 })
@@ -106,7 +111,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             android.R.id.home -> {
                 binding.drawerLayout.openDrawer(GravityCompat.START)
             }
-            R.id.start_search -> {
+            R.id.search_start -> {
                 return true
             }
             R.id.move_map -> {
@@ -184,10 +189,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
         }
 
     override fun onBackPressed() {
-        if (mode == WayPointSearch) {
-            setResult(RESULT_CANCELED)
-            mMenu.findItem(R.id.start_search)?.collapseActionView()
-        }
+        removeFragment(supportFragmentManager.fragments.last())
         super.onBackPressed()
     }
 
@@ -202,5 +204,4 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             imm?.hideSoftInputFromWindow(v.windowToken, 0)
         }
     }
-
 }
