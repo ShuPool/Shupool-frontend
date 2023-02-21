@@ -110,7 +110,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:text="혜와역"
+            android:text="혜화역"
             android:textColor="@color/dark_gray"
             android:textSize="14sp"
             android:textStyle="bold"
