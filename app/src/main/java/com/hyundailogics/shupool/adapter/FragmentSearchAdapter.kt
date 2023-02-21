@@ -210,7 +210,7 @@ class FragmentSearchAdapter(private val listener: FragmentSearchAdapterListener,
             address.visibility = if (name.text == address.text) View.INVISIBLE else View.VISIBLE
 
             with (btnSelect) {
-                text = if (isSearchGoal) "도착" else "경유"
+                text = if (isSearchGoal) "출발" else "경유"
                 this.setOnClickListener {
                     listener.onSearchResult(item)
                 }

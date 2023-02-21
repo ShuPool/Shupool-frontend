@@ -103,7 +103,7 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
         return binding.root.apply {
             binding.recyclerView.adapter = FragmentSearchAdapter(object : FragmentSearchAdapterListener {
                 override fun onItemClick(poi: KNSearchPOI) {
-                        mListener?.onSearchResult(poi)
+                    mListener?.onSearchResult(poi)
                 }
 
                 override fun onSearchMore(type: KNSearchReqType) {
@@ -120,7 +120,7 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
             binding.recyclerView2.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 inner class Holder(view: View): RecyclerView.ViewHolder(view) {
-                    val searchKeyword: TextView = view.findViewById(R.id.poi_address)
+                    val searchKeyword: TextView = view.findViewById(R.id.poi_name)
                     init {
                         view.setOnClickListener {
 
@@ -238,5 +238,4 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
         binding.txtError.visibility = View.GONE
     }
 }
-
 
