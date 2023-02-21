@@ -6,26 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hyundailogics.shupool.Notify
-import com.hyundailogics.shupool.adapter.NotifyAdapter
-import com.hyundailogics.shupool.databinding.FragmentNotifyBinding
+import com.hyundailogics.shupool.DriverNotify
+import com.hyundailogics.shupool.adapter.DriverNotifyAdapter
+import com.hyundailogics.shupool.databinding.FragmentDriverNotifyBinding
 
-class NotifyFragment : Fragment() {
-    lateinit var binding: FragmentNotifyBinding
+class DriverNotifyFragment : Fragment() {
+    lateinit var binding: FragmentDriverNotifyBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNotifyBinding.inflate(inflater, container, false)
+        binding = FragmentDriverNotifyBinding.inflate(inflater, container, false)
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.layoutManager = layoutManager
 
-        val adapter = NotifyAdapter()
+        val adapter = DriverNotifyAdapter()
 
-        adapter.items.add(Notify("유진", "국민대"))
-        adapter.items.add(Notify("은선", "출근"))
+        adapter.items.add(DriverNotify("유진", "국민대"))
+        adapter.items.add(DriverNotify("은선", "출근"))
 
         binding.recyclerView.adapter = adapter
 
