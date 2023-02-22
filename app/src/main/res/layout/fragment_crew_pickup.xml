@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="bottom"
     app:umanoDragView="@id/slide_layout"
-    app:umanoPanelHeight="156dp"
+    app:umanoPanelHeight="132dp"
     tools:context=".fragment.DriverRouteFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,17 +39,40 @@
         android:layout_height="match_parent"
         android:background="@drawable/panel">
 
-        <SearchView
-            android:id="@+id/start_search"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/ic_blue_marker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:iconifiedByDefault="false"
-            android:queryHint="출발지 입력"
-            android:searchIcon="@drawable/ic_blue_marker"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_blue_marker"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="출발지"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_blue_marker"
+            app:layout_constraintStart_toEndOf="@id/ic_blue_marker"
+            app:layout_constraintTop_toTopOf="@id/ic_blue_marker" />
+
+        <TextView
+            android:id="@+id/departure_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="국민대학교"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/departure"
+            app:layout_constraintStart_toEndOf="@id/departure"
+            app:layout_constraintTop_toTopOf="@id/departure" />
 
         <SearchView
             android:id="@+id/pickup_search"
@@ -61,29 +84,53 @@
             android:queryHint="픽업 장소 입력"
             android:searchIcon="@drawable/ic_black_marker"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/start_search" />
+            app:layout_constraintTop_toBottomOf="@+id/departure_name" />
 
-        <SearchView
-            android:id="@+id/destination_search"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/ic_red_marker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:gravity="center_vertical"
-            android:iconifiedByDefault="false"
-            android:queryHint="도착지 입력"
-            android:searchIcon="@drawable/ic_red_marker"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pickup_search" />
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_red_marker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pickup_search" />
+
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="도착지"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_red_marker"
+            app:layout_constraintStart_toEndOf="@id/ic_red_marker"
+            app:layout_constraintTop_toTopOf="@id/ic_red_marker" />
+
+        <TextView
+            android:id="@+id/destination_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="혜화역"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/destination"
+            app:layout_constraintStart_toEndOf="@id/destination"
+            app:layout_constraintTop_toTopOf="@id/destination" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:background="#000000"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destination_search"
+            app:layout_constraintTop_toBottomOf="@+id/destination_name"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp"
             tools:listitem="@layout/fragment_search_history_item" />
@@ -92,10 +139,11 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/destination_search"
+            app:layout_constraintTop_toBottomOf="@+id/destination_name"
             tools:listitem="@layout/fragment_search_result_item" />
 
         <TextView
