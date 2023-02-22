@@ -49,7 +49,8 @@
             android:searchIcon="@drawable/ic_blue_marker"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:theme="@style/AppSearchView" />
 
         <SearchView
             android:id="@+id/destination_search"
@@ -61,7 +62,8 @@
             android:queryHint="도착지 입력"
             android:searchIcon="@drawable/ic_red_marker"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/start_search" />
+            app:layout_constraintTop_toBottomOf="@+id/start_search"
+            app:theme="@style/AppSearchView" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView2"
