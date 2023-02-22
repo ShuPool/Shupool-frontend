@@ -136,6 +136,7 @@ class KNNaviActivity : BaseActivity(),
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     }
 
+//    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         return
     }

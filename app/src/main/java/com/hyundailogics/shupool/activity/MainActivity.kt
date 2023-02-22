@@ -188,6 +188,7 @@ class MainActivity : BaseActivity(), FragmentSearchListener {
             }
         }
 
+//    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         removeFragment(supportFragmentManager.fragments.last())
         super.onBackPressed()

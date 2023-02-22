@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2"
+    tools:ignore="ExtraText">
+
+    <ImageView
+        android:id="@+id/dashLine1"
+        android:layout_width="120dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/dash_line_main"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/whiteCar"
+        android:layout_width="72dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/white_car"
+        app:layout_constraintEnd_toStartOf="@id/dashLine2"
+        app:layout_constraintStart_toEndOf="@id/dashLine1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dashLine2"
+        android:layout_width="120dp"
+        android:layout_height="4dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/dash_line_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/driverButton"
+        android:layout_width="210dp"
+        android:layout_height="460dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="#FDDC3F"
+        android:padding="0dp"
+        android:text="드라이버"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashLine1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/crewButton"
+        android:layout_width="210dp"
+        android:layout_height="460dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/black"
+        android:padding="0dp"
+        android:text="크루"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dashLine1" />
+
+    <ImageView
+        android:id="@+id/street"
+        android:layout_width="336dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/street"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/driverButton" />
+
+    <ImageView
+        android:id="@+id/dashLine3"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/dash_line_main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/driverButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
