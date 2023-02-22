@@ -1,8 +1,9 @@
-package com.hyundailogics.shupool
+package com.hyundailogics.shupool.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
+import com.hyundailogics.shupool.R
 
 class MainActivity1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
