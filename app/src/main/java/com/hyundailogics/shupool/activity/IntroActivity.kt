@@ -92,7 +92,7 @@ class IntroActivity : BaseActivity() {
                             }
                         }
                     } else {
-                        startActivity(Intent(applicationContext, MainActivity::class.java))
+                        startActivity(Intent(applicationContext, CarpoolCreateActivity::class.java))
                         finish()
                     }
                 })
