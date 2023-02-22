@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    app:umanoDragView="@id/slide_layout"
+    app:umanoPanelHeight="208dp"
+    tools:context=".fragment.FragmentDriverRoute">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@color/color_transparent"
+            android:src="@drawable/ic_btn_back"
+            app:layout_constraintBottom_toBottomOf="@id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/title" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:text="카풀 요청"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/back_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kakaomobility.knsdk.map.knmapview.KNMapView
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/panel">
+
+        <ImageView
+            android:id="@+id/ic_blue_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_blue_marker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/departure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="출발지"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_blue_marker"
+            app:layout_constraintStart_toEndOf="@id/ic_blue_marker"
+            app:layout_constraintTop_toTopOf="@id/ic_blue_marker" />
+
+        <TextView
+            android:id="@+id/departure_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:10"
+            android:textColor="@color/light_gray"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/departure"
+            app:layout_constraintStart_toStartOf="@id/departure"
+            app:layout_constraintTop_toBottomOf="@id/departure" />
+
+        <TextView
+            android:id="@+id/departure_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="국민대학교"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/departure"
+            app:layout_constraintStart_toEndOf="@id/departure"
+            app:layout_constraintTop_toTopOf="@id/departure" />
+
+        <TextView
+            android:id="@+id/departure_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울 성북구 정릉로 77 (정릉동)"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/departure_name"
+            app:layout_constraintTop_toBottomOf="@id/departure_name" />
+
+        <ImageView
+            android:id="@+id/ic_black_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_black_marker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/departure_address" />
+
+        <TextView
+            android:id="@+id/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="픽업 장소"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_black_marker"
+            app:layout_constraintStart_toEndOf="@id/ic_black_marker"
+            app:layout_constraintTop_toTopOf="@id/ic_black_marker" />
+
+        <TextView
+            android:id="@+id/pickup_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:20"
+            android:textColor="@color/light_gray"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/pickup"
+            app:layout_constraintStart_toStartOf="@id/pickup"
+            app:layout_constraintTop_toBottomOf="@id/pickup" />
+
+        <TextView
+            android:id="@+id/pickup_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="성신여대입구역 4호선"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/pickup"
+            app:layout_constraintStart_toEndOf="@id/pickup"
+            app:layout_constraintTop_toTopOf="@id/pickup" />
+
+        <TextView
+            android:id="@+id/pickup_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울 성북구 동소문로 지하 102 (동선동4가)"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/pickup_name"
+            app:layout_constraintTop_toBottomOf="@id/pickup_name" />
+
+        <ImageView
+            android:id="@+id/ic_red_marker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_red_marker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pickup_address" />
+
+        <TextView
+            android:id="@+id/destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="도착지"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/ic_red_marker"
+            app:layout_constraintStart_toEndOf="@id/ic_red_marker"
+            app:layout_constraintTop_toTopOf="@id/ic_red_marker" />
+
+        <TextView
+            android:id="@+id/destination_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="17:30"
+            android:textColor="@color/light_gray"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@id/destination"
+            app:layout_constraintStart_toStartOf="@id/destination"
+            app:layout_constraintTop_toBottomOf="@id/destination" />
+
+        <TextView
+            android:id="@+id/destination_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="혜화역"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/destination"
+            app:layout_constraintStart_toEndOf="@id/destination"
+            app:layout_constraintTop_toTopOf="@id/destination" />
+
+        <TextView
+            android:id="@+id/destination_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울 종로구 대학로 지하 120 (명륜4가)"
+            android:textColor="@color/gray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/destination_name"
+            app:layout_constraintTop_toBottomOf="@id/destination_name" />
+
+        <Button
+            android:id="@+id/RequestButton"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_square_yellow"
+            android:text="요청하기"
+            android:textColor="@color/dark_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/destination_address" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

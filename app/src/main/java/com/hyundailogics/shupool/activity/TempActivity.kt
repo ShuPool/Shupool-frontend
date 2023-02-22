@@ -20,4 +20,3 @@ class TempActivity : AppCompatActivity() {
         }
     }
 }
-
