@@ -84,7 +84,8 @@
             android:queryHint="픽업 장소 입력"
             android:searchIcon="@drawable/ic_black_marker"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/departure_name" />
+            app:layout_constraintTop_toBottomOf="@+id/departure_name"
+            app:theme="@style/AppSearchView" />
 
         <ImageView
             android:id="@+id/ic_red_marker"
