@@ -17,7 +17,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/button_back" />
+        app:srcCompat="@drawable/ic_btn_back" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
