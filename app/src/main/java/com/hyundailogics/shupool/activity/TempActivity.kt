@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.fragment.CarpoolCompletedFragment
-import com.hyundailogics.shupool.fragment.SetRouteFragment
+import com.hyundailogics.shupool.fragment.DriverNotifyFragment
 
 class TempActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +15,7 @@ class TempActivity : AppCompatActivity() {
     }
     fun onFragmentChanged(index: Int) {
         when (index) {
-            0 ->supportFragmentManager.beginTransaction().replace(R.id.mainContainer, SetRouteFragment()).commit()
+            0 ->supportFragmentManager.beginTransaction().replace(R.id.mainContainer, DriverNotifyFragment()).commit()
             1 ->supportFragmentManager.beginTransaction().replace(R.id.mainContainer, CarpoolCompletedFragment()).commit()
         }
     }
