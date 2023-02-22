@@ -7,10 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.hyundailogics.shupool.R
 
-class MainActivity2 : AppCompatActivity() {
+class SelectActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.activity_select)
 
         var actionBar: ActionBar?
         val driverButton: AppCompatButton by lazy {
