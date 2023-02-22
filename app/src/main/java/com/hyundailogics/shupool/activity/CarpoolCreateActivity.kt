@@ -23,8 +23,8 @@ class CarpoolCreateActivity : BaseActivity() {
     }
     fun onFragmentChanged(index: Int) {
         when (index) {
-            0 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, SetRouteFragment()).commit()
-            1 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, CarpoolCompletedFragment()).commit()
+            0 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, SetRouteFragment()).addToBackStack(null).commit()
+            1 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, CarpoolCompletedFragment()).addToBackStack(null).commit()
         }
     }
 }
