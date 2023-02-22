@@ -21,10 +21,10 @@ class CarpoolCreateActivity : BaseActivity() {
 
 //        onFragmentChanged(0)
     }
-//    fun onFragmentChanged(index: Int) {
-//        when (index) {
-//            0 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, DriverRouteFragment()).commit()
-//            1 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, CarpoolCompletedFragment()).commit()
-//        }
-//    }
+    fun onFragmentChanged(index: Int) {
+        when (index) {
+            0 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, SetRouteFragment()).commit()
+            1 ->supportFragmentManager.beginTransaction().replace(R.id.createContainer, CarpoolCompletedFragment()).commit()
+        }
+    }
 }

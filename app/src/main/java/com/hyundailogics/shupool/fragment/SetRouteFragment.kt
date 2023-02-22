@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.hyundailogics.shupool.activity.TempActivity
+import com.hyundailogics.shupool.activity.CarpoolCreateActivity
 import com.hyundailogics.shupool.databinding.FragmentSetRouteBinding
 
 class SetRouteFragment : Fragment() {
@@ -18,7 +18,7 @@ class SetRouteFragment : Fragment() {
         binding = FragmentSetRouteBinding.inflate(inflater, container, false)
 
         binding.completeButton.setOnClickListener {
-            val activity = activity as TempActivity?
+            val activity = activity as CarpoolCreateActivity?
             activity?.onFragmentChanged(1)
         }
         return binding.root

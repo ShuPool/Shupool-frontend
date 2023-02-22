@@ -15,6 +15,7 @@ import androidx.core.view.children
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.hyundailogics.shupool.R
+import com.hyundailogics.shupool.activity.CarpoolCreateActivity
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.FragmentDriverRouteBinding
 import com.kakaomobility.knsample.adapter.FragmentSearchAdapter
@@ -91,6 +92,9 @@ class DriverRouteFragment(searchGoal: Boolean = true) : FragmentBaseMap() {
                     else if(binding.destinationSearch.hasFocusRec) {
                         binding.destinationSearch.setQuery(poi.name, false)
                         binding.destinationSearch.clearFocus()
+
+                        val activity = activity as CarpoolCreateActivity?
+                        activity?.onFragmentChanged(0)
                     }
 
                     mListener?.onSearchResult(poi)
