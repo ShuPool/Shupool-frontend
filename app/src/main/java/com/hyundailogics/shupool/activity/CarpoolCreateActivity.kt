@@ -3,16 +3,21 @@ package com.hyundailogics.shupool.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.hyundailogics.shupool.R
+import com.hyundailogics.shupool.databinding.ActivityCarpoolCreateBinding
 import com.hyundailogics.shupool.fragment.CarpoolCompletedFragment
 import com.hyundailogics.shupool.fragment.DriverRouteFragment
+import com.hyundailogics.shupool.fragment.FragmentFindLocationMarker
 import com.hyundailogics.shupool.fragment.SetRouteFragment
 
-class CarpoolCreateActivity : AppCompatActivity() {
+class CarpoolCreateActivity : BaseActivity() {
+    private lateinit var binding: ActivityCarpoolCreateBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_carpool_create)
+        binding = ActivityCarpoolCreateBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        supportFragmentManager.beginTransaction().replace(R.id.createContainer, DriverRouteFragment()).commit()
+        addFragment(binding.createContainer.id, DriverRouteFragment(), "test")
+//        supportFragmentManager.beginTransaction().replace(R.id.createContainer, DriverRouteFragment()).commit()
 
 //        onFragmentChanged(0)
     }
