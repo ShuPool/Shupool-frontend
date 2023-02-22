@@ -6,16 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hyundailogics.shupool.activity.TempActivity
-import com.hyundailogics.shupool.databinding.FragmentSetPickupRouteBinding
+import com.hyundailogics.shupool.databinding.FragmentSetPickupBinding
 
-class SetPickupRouteFragment : Fragment() {
-    lateinit var binding: FragmentSetPickupRouteBinding
+class SetPickupFragment : Fragment() {
+    lateinit var binding: FragmentSetPickupBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSetPickupRouteBinding.inflate(inflater, container, false)
+        binding = FragmentSetPickupBinding.inflate(inflater, container, false)
 
         binding.RequestButton.setOnClickListener {
             val activity = activity as TempActivity?

@@ -21,6 +21,11 @@ class SelectActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.crewButton.setOnClickListener {
+            val intent = Intent(this, CarpoolJoinActivity::class.java)
+            startActivity(intent)
+        }
+
 //        setContentView(R.layout.activity_select)
 //
 //        var actionBar: ActionBar?
