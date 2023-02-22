@@ -5,14 +5,17 @@ import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
+import androidx.core.view.children
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.hyundailogics.shupool.R
+import com.hyundailogics.shupool.activity.CarpoolCreateActivity
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.FragmentDriverRouteBinding
 import com.kakaomobility.knsample.adapter.FragmentSearchAdapter
@@ -26,16 +29,9 @@ import com.kakaomobility.knsdk.common.util.IntPoint
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
 import com.kakaomobility.knsdk.map.knmapview.KNMapView
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
-import java.lang.RuntimeException
-
-const val SEARCH_POI_COUNT_PER_PAGE = 15
 
 
-interface FragmentSearchListener {
-    fun onSearchResult(poi: KNSearchPOI, avoidOption: Int = 0, routeOption: KNRoutePriority? = null)
-}
-
-class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
+class DriverRouteFragment(searchGoal: Boolean = true) : FragmentBaseMap() {
     private var _binding: FragmentDriverRouteBinding? = null
     private val binding get() = _binding!!
 
@@ -50,25 +46,10 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
 
     private var mListener: FragmentSearchListener? = null
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-        if (context is FragmentSearchListener) {
-            mListener = context
-        } else {
-            throw RuntimeException(context.toString())
-        }
-    }
-
-    override fun onDetach() {
-        super.onDetach()
-
-        mListener = null
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    val View.hasFocusRec: Boolean get() = when {
+        isFocused -> true
+        this is ViewGroup -> children.any { it.hasFocusRec }
+        else -> false
     }
 
     override fun onCreateView(
@@ -102,7 +83,20 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
 
         return binding.root.apply {
             binding.recyclerView.adapter = FragmentSearchAdapter(object : FragmentSearchAdapterListener {
+                // 출발 버튼 클릭 시
                 override fun onItemClick(poi: KNSearchPOI) {
+                    if(binding.startSearch.hasFocusRec) {
+                        binding.startSearch.setQuery(poi.name, false)
+                        binding.startSearch.clearFocus()
+                    }
+                    else if(binding.destinationSearch.hasFocusRec) {
+                        binding.destinationSearch.setQuery(poi.name, false)
+                        binding.destinationSearch.clearFocus()
+
+                        val activity = activity as CarpoolCreateActivity?
+                        activity?.onFragmentChanged(0)
+                    }
+
                     mListener?.onSearchResult(poi)
                 }
 
@@ -122,7 +116,16 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
                 inner class Holder(view: View): RecyclerView.ViewHolder(view) {
                     val searchKeyword: TextView = view.findViewById(R.id.poi_name)
                     init {
+                        // 최근기록 (출발 버튼 X)
                         view.setOnClickListener {
+                            Log.d("최근기록", searchKeyword.text.toString())
+
+                            if(binding.startSearch.hasFocusRec) {
+                                binding.startSearch.setQuery(searchKeyword.text.toString(), false)
+                            }
+                            else if(binding.destinationSearch.hasFocusRec) {
+                                binding.destinationSearch.setQuery(searchKeyword.text.toString(), false)
+                            }
 
                             val imm: InputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
                             imm.hideSoftInputFromWindow((context as Activity).currentFocus?.windowToken, 0)
@@ -238,4 +241,3 @@ class FragmentDriverRoute(searchGoal: Boolean = true) : FragmentBaseMap() {
         binding.txtError.visibility = View.GONE
     }
 }
-

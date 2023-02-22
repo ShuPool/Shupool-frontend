@@ -109,7 +109,7 @@ class FragmentSearch(searchGoal: Boolean = true) : Fragment() {
             binding.recyclerView2.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 inner class Holder(view: View): RecyclerView.ViewHolder(view) {
-                    val searchKeyword: TextView = view.findViewById(R.id.poi_address)
+                    val searchKeyword: TextView = view.findViewById(R.id.poi_name)
                     init {
                         view.setOnClickListener {
 
