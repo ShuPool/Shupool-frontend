@@ -31,6 +31,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.DriverNotifyDetailActivity" />
+
         <activity android:name=".activity.IntroActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|locale|layoutDirection|density"
             android:exported="true"

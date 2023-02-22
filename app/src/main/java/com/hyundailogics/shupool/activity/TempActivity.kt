@@ -9,9 +9,9 @@ import com.hyundailogics.shupool.fragment.DriverNotifyFragment
 class TempActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_driver_notify_detail)
+        setContentView(R.layout.activity_temp)
 
-//        onFragmentChanged(0)
+        onFragmentChanged(0)
     }
     fun onFragmentChanged(index: Int) {
         when (index) {
