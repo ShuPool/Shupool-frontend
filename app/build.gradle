@@ -66,4 +66,5 @@ dependencies {
 
     implementation 'com.github.hannesa2:AndroidSlidingUpPanel:4.2.1'
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
+    implementation 'de.hdodenhof:circleimageview:3.1.0' //원형 이미지뷰
 }

@@ -22,7 +22,7 @@ import com.hyundailogics.shupool.fragment.*
 import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
-import com.sothree.slidinguppanel.SlidingUpPanelLayout
+//import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 const val fragmentMoveMapTag = "Move"
 const val fragmentMapTag = "Map"
