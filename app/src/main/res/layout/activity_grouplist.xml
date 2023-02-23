@@ -4,29 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/base_bg_color"
+    android:background="@color/bg_grey21"
     tools:context=".activity.GroupListActivity"
     tools:ignore="ExtraText">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/baseline_search_24"
-        app:layout_constraintStart_toStartOf="@+id/searchBar"
-        app:layout_constraintTop_toTopOf="@id/searchBar" />
 
 
     <EditText
         android:id="@+id/searchBar"
-        android:hint="닉네임, 경로명 등으로 검색해 보세요."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:background="@drawable/searchbar_edittext_shape"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/searchbar_edittext_shape"
+        android:hint="닉네임, 경로명 등으로 검색해 보세요."
+        android:paddingStart="36dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
