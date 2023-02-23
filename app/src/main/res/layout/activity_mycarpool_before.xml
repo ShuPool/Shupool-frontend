@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MyCarpoolBefore"
+    tools:context="com.hyundailogics.shupool.activity.MyCarpoolBefore"
     tools:ignore="ExtraText">
 
     <ImageButton
@@ -12,12 +12,12 @@
         android:layout_width="16dp"
         android:layout_height="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:background="@color/text_white"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_button" />
+        app:srcCompat="@drawable/ic_btn_back" />
 
     <TextView
         android:id="@+id/title"
@@ -26,7 +26,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:text="카풀 상세"
-        android:textColor="@color/black"
+        android:textColor="@color/text_black1"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/back_button"

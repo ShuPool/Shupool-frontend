@@ -1,6 +1,7 @@
 package com.kakaomobility.knsample.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -63,16 +64,20 @@ class FragmentSearchAdapter(private val listener: FragmentSearchAdapterListener,
                 idx -= (addressSize + hasHeaderOfPlaces)
 
                 holder.bind(places[idx], isSearchGoal, object: FragmentSearchListener {
+                    // 장소 결과 출발 버튼
                     override fun onSearchResult(poi: KNSearchPOI, avoidOption: Int, routeOption: KNRoutePriority?) {
                         listener.onItemClick(poi)
+                        Log.d("장소 결과 출발 버튼", poi.name)
                     }
                 })
             } else {
                 idx -= hasHeaderOfAddress
 
                 holder.bind(addresses[idx], isSearchGoal, object: FragmentSearchListener {
+                    // 주소 결과 출발 버튼
                     override fun onSearchResult(poi: KNSearchPOI, avoidOption: Int, routeOption: KNRoutePriority?) {
                         listener.onItemClick(poi)
+                        Log.d("주소 결과 출발 버튼", poi.name)
                     }
                 })
             }
@@ -207,10 +212,14 @@ class FragmentSearchAdapter(private val listener: FragmentSearchAdapterListener,
             name.text = item.name
             address.text = item.address
 
+            itemView.setOnClickListener {
+                Log.d("아이템", item.name)
+            }
+
             address.visibility = if (name.text == address.text) View.INVISIBLE else View.VISIBLE
 
             with (btnSelect) {
-                text = if (isSearchGoal) "도착" else "경유"
+                text = if (isSearchGoal) "출발" else "경유"
                 this.setOnClickListener {
                     listener.onSearchResult(item)
                 }

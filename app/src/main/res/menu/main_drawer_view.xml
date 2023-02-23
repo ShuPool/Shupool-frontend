@@ -13,5 +13,11 @@
             android:icon="@drawable/ic_place"
             android:title="@string/main_drawer_item_dguide" />
 
+        <item
+            android:id="@+id/main_drawer_driver_test"
+            android:checked="true"
+            android:icon="@drawable/cap_app_log_ic"
+            android:title="드라이버 테스트"
+            />
     </group>
 </menu>
