@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/base_bg_color"
     tools:context=".activity.GroupListActivity"
     tools:ignore="ExtraText">
 
@@ -19,10 +20,12 @@
 
     <EditText
         android:id="@+id/searchBar"
+        android:hint="닉네임, 경로명 등으로 검색해 보세요."
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:background="@drawable/searchbar_edittext_shape"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
