@@ -30,15 +30,29 @@
         app:layout_constraintTop_toTopOf="@id/car_icon" />
 
     <ImageButton
-        android:id="@+id/add_icon"
+        android:id="@+id/search_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/ic_add"
+        android:src="@drawable/ic_search2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/search_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="내 카풀"
+        android:textColor="@color/gray"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/search_icon"
+        app:layout_constraintStart_toStartOf="@id/search_icon"
+        app:layout_constraintTop_toTopOf="@id/search_icon" />
 
     <ImageButton
         android:id="@+id/notification_icon"
