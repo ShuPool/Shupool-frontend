@@ -7,25 +7,27 @@
     android:background="@color/bg_yellow2"
     tools:context=".activity.IntroActivity">
 
+    <TextView
+        android:id="@+id/boldTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="120dp"
+        android:text="새로운 이동 기준, 셔풀"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/acitivity_intro_imageLogo"
-        app:layout_constraintBottom_toTopOf="@+id/imageBottom"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/intro_logo" />
+        app:srcCompat="@drawable/hyundal_car"
+        tools:layout_editor_absoluteY="67dp" />
 
-    <ImageView
-        android:id="@+id/imageBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:contentDescription="@string/acitivity_intro_imageBottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/intro_text_v" />
 </androidx.constraintlayout.widget.ConstraintLayout>
