@@ -28,19 +28,19 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/profile"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/drivOrCrew"
-        android:textSize="10sp"
-        android:layout_marginTop="2dp"
-        android:layout_marginStart="12dp"
-        app:layout_constraintStart_toEndOf="@id/profile"
-        app:layout_constraintTop_toBottomOf="@id/nickname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
         android:text="드라이버"
-        android:textColor="@color/light_gray"/>
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/nickname" />
 
     <ImageView
         android:id="@+id/line"
@@ -60,8 +60,68 @@
         android:text="그룹명"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/line"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <ImageView
+        android:id="@+id/redMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_red_marker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/groupName"/>
+
+    <TextView
+        android:id="@+id/departureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="6dp"
+        android:text="출발지"
+        android:textSize="10sp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toEndOf="@id/redMarker"
+        app:layout_constraintTop_toBottomOf="@id/groupName" />
+
+    <TextView
+        android:id="@+id/departure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="국민대학교"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/departureTextView"
+        app:layout_constraintTop_toBottomOf="@id/groupName" />
+
+    <TextView
+        android:id="@+id/departure_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="2dp"
+        android:text="17:10"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/departureTextView" />
+
+    <TextView
+        android:id="@+id/departure_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="서울 성북구 정릉로 77 (정릉동)"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/departure_time"
+        app:layout_constraintTop_toBottomOf="@id/departureTextView" />
+
 
 
 
