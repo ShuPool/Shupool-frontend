@@ -10,8 +10,213 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/hyundal_car"
         app:civ_border_overlay="true"
         app:civ_border_width="0.5dp"
-        android:src="@drawable/hyundal_car" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="닉네임"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/profile"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/drivOrCrew"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="드라이버"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/profile"
+        app:layout_constraintTop_toBottomOf="@id/nickname" />
+
+    <ImageView
+        android:id="@+id/collect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/baseline_bookmark_24_collect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="-8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/baseline_bookmark_24_end"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="모집"
+        android:layout_marginEnd="12dp"
+        android:textColor="@color/dark_gray"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/collect"
+        app:layout_constraintTop_toTopOf="@id/collect"/>
+
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/grouplist_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drivOrCrew" />
+
+    <TextView
+        android:id="@+id/groupName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="그룹명"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <ImageView
+        android:id="@+id/blueMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_blue_marker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/departure_time" />
+
+    <TextView
+        android:id="@+id/destinationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:text="도착지"
+        android:textColor="@color/gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/redMarker"
+        app:layout_constraintTop_toBottomOf="@id/departure_time" />
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:text="혜화역"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/departureTextView"
+        app:layout_constraintTop_toBottomOf="@id/departure_address" />
+
+    <TextView
+        android:id="@+id/destination_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="2dp"
+        android:text="17:10"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/destinationTextView" />
+
+    <TextView
+        android:id="@+id/destination_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="서울 종로구 대학로 지하 120 (명륜4가)"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/departure_time"
+        app:layout_constraintTop_toBottomOf="@id/destinationTextView" />
+
+    <ImageView
+        android:id="@+id/redMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/ic_red_marker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/groupName" />
+
+    <TextView
+        android:id="@+id/departureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="6dp"
+        android:text="출발지"
+        android:textColor="@color/gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/redMarker"
+        app:layout_constraintTop_toBottomOf="@id/groupName" />
+
+    <TextView
+        android:id="@+id/departure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="국민대학교"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/departureTextView"
+        app:layout_constraintTop_toBottomOf="@id/groupName" />
+
+    <TextView
+        android:id="@+id/departure_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="2dp"
+        android:text="17:10"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/departureTextView" />
+
+    <TextView
+        android:id="@+id/departure_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="서울 성북구 정릉로 77 (정릉동)"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/departure_time"
+        app:layout_constraintTop_toBottomOf="@id/departureTextView" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
