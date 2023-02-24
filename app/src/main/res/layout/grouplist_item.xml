@@ -46,6 +46,8 @@
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/grouplist_line"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +64,65 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <ImageView
+        android:id="@+id/blueMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_blue_marker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/departure_time"/>
+
+    <TextView
+        android:id="@+id/destinationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:text="도착지"
+        android:textSize="10sp"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toEndOf="@id/redMarker"
+        app:layout_constraintTop_toBottomOf="@id/departure_time" />
+
+    <TextView
+        android:id="@+id/destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="15dp"
+        android:text="혜화역"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/departureTextView"
+        app:layout_constraintTop_toBottomOf="@id/departure_address" />
+
+    <TextView
+        android:id="@+id/destination_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="2dp"
+        android:text="17:10"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/destinationTextView" />
+
+    <TextView
+        android:id="@+id/destination_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="서울 종로구 대학로 지하 120 (명륜4가)"
+        android:textColor="@color/light_gray"
+        android:textSize="10sp"
+        app:layout_constraintStart_toEndOf="@id/departure_time"
+        app:layout_constraintTop_toBottomOf="@id/destinationTextView" />
 
     <ImageView
         android:id="@+id/redMarker"
