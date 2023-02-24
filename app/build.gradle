@@ -6,6 +6,7 @@ plugins {
 // 선언 및 키값을 불러오기
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def kakaoApiKey = properties.getProperty('REAL_APP_KEY')
 
 android {
     namespace 'com.hyundailogics.shupool'
@@ -23,6 +24,7 @@ android {
         buildConfigField "String", "VERSION_NAME", properties['VERSION_NAME']
         buildConfigField "String", "REST_API_KEY", properties['REST_API_KEY']
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [kakaoApiKey:kakaoApiKey]
     }
 
     buildTypes {
