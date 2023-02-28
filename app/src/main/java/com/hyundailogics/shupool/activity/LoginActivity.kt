@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
-import com.hyundailogics.shupool.R
-import com.hyundailogics.shupool.BuildConfig.*
+import com.hyundailogics.shupool.BuildConfig.REAL_APP_KEY
 import com.hyundailogics.shupool.databinding.ActivityLoginBinding
 import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk

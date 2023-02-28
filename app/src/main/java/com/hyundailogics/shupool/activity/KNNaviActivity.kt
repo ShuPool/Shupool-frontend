@@ -12,7 +12,9 @@ import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.carTypeWithIdx
 import com.hyundailogics.shupool.fuelTypeWithIdx
-import com.kakaomobility.knsdk.*
+import com.kakaomobility.knsdk.KNRouteAvoidOption
+import com.kakaomobility.knsdk.KNRoutePriority
+import com.kakaomobility.knsdk.KNSDK
 import com.kakaomobility.knsdk.common.objects.KNError
 import com.kakaomobility.knsdk.guidance.knguidance.*
 import com.kakaomobility.knsdk.guidance.knguidance.citsguide.KNGuide_Cits

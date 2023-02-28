@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.activity.CarpoolCreateActivity
 import com.hyundailogics.shupool.databinding.FragmentCarpoolCompletedBinding
 

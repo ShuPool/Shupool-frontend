@@ -1,6 +1,5 @@
 package com.kakaomobility.knsample.adapter
 
-import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.fragment.FragmentSearchListener
 import com.kakaomobility.knsdk.KNRoutePriority
-import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 import com.kakaomobility.knsdk.KNSearchReqType
 import com.kakaomobility.knsdk.api.objects.KNSearchResultObject
+import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 
 const val FragmentSearchAdapterTypeHeader = 0
 const val FragmentSearchAdapterTypeItem = 1

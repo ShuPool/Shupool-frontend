@@ -10,7 +10,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.SearchView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.children
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -20,14 +22,17 @@ import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.FragmentDriverRouteBinding
 import com.kakaomobility.knsample.adapter.FragmentSearchAdapter
 import com.kakaomobility.knsample.adapter.FragmentSearchAdapterListener
-import com.kakaomobility.knsdk.*
+import com.kakaomobility.knsdk.KNSDK
+import com.kakaomobility.knsdk.KNSearchReqType
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_X
 import com.kakaomobility.knsdk.common.gps.KN_DEFAULT_POS_Y
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 import com.kakaomobility.knsdk.common.util.FloatPoint
 import com.kakaomobility.knsdk.common.util.IntPoint
+import com.kakaomobility.knsdk.getSearchKeywordHistory
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
 import com.kakaomobility.knsdk.map.knmapview.KNMapView
+import com.kakaomobility.knsdk.storeSearchKeywordHistory
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 

@@ -9,7 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.*
+import android.widget.SearchView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.hyundailogics.shupool.R
@@ -26,7 +28,6 @@ import com.kakaomobility.knsdk.common.util.IntPoint
 import com.kakaomobility.knsdk.map.knmaprenderer.objects.KNMapCameraUpdate
 import com.kakaomobility.knsdk.map.knmapview.KNMapView
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
-import java.lang.RuntimeException
 
 const val SEARCH_POI_COUNT_PER_PAGE = 15
 

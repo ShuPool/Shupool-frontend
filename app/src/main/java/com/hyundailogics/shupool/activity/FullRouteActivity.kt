@@ -19,7 +19,9 @@ import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.databinding.ActivityFullRouteBinding
 import com.hyundailogics.shupool.utils.EventObserver
 import com.kakaomobility.knsample.viewmodel.FullRouteViewModel
-import com.kakaomobility.knsdk.*
+import com.kakaomobility.knsdk.KNLanguageType
+import com.kakaomobility.knsdk.KNRoutePriority
+import com.kakaomobility.knsdk.KNSDK
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.util.FloatPoint
 import com.kakaomobility.knsdk.common.util.IntPoint
@@ -34,7 +36,6 @@ import com.kakaomobility.knsdk.map.uicustomsupport.renewal.theme.base.KNMapTheme
 import com.kakaomobility.knsdk.trip.kntrip.KNTrip
 import com.kakaomobility.knsdk.trip.kntrip.knroute.KNRoute
 import com.kakaomobility.knsdk.ui.manager.KNMapObjectFactory
-import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 class FullRouteActivity : BaseActivity(), KNMapViewEventListener, KNMarkerEventListener {
 

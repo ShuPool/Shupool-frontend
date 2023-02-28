@@ -3,7 +3,8 @@ package com.hyundailogics.shupool.activity
 import android.os.Bundle
 import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.databinding.ActivityCarpoolJoinBinding
-import com.hyundailogics.shupool.fragment.*
+import com.hyundailogics.shupool.fragment.CrewPickupFragment
+import com.hyundailogics.shupool.fragment.SetPickupFragment
 
 class CarpoolJoinActivity : BaseActivity() {
     private lateinit var binding: ActivityCarpoolJoinBinding

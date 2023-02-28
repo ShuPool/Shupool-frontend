@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.activity.CarpoolCreateActivity
 import com.hyundailogics.shupool.databinding.FragmentSetRouteBinding
 import com.kakaomobility.knsdk.KNSDK

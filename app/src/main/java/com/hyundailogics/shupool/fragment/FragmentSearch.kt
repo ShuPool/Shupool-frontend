@@ -20,11 +20,11 @@ import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.application.GlobalApplication
 import com.hyundailogics.shupool.carTypeWithIdx
 import com.hyundailogics.shupool.databinding.FragmentSearchBinding
-import com.kakaomobility.knsample.adapter.*
+import com.kakaomobility.knsample.adapter.FragmentSearchAdapter
+import com.kakaomobility.knsample.adapter.FragmentSearchAdapterListener
 import com.kakaomobility.knsdk.*
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
 import com.kakaomobility.knsdk.common.util.IntPoint
-import java.lang.RuntimeException
 
 //const val SEARCH_POI_COUNT_PER_PAGE = 15
 

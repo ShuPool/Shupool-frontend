@@ -5,12 +5,10 @@ import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
@@ -22,6 +20,7 @@ import com.hyundailogics.shupool.fragment.*
 import com.kakaomobility.knsdk.KNRoutePriority
 import com.kakaomobility.knsdk.common.objects.KNPOI
 import com.kakaomobility.knsdk.common.objects.KNSearchPOI
+
 //import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
 const val fragmentMoveMapTag = "Move"

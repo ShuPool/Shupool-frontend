@@ -8,7 +8,6 @@ import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
-import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.activity.KNNaviActivity
 
 /**

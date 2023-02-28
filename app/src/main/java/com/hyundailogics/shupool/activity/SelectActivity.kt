@@ -2,11 +2,7 @@ package com.hyundailogics.shupool.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.AppCompatButton
-import com.hyundailogics.shupool.R
 import com.hyundailogics.shupool.databinding.ActivitySelectBinding
 
 class SelectActivity : AppCompatActivity() {
