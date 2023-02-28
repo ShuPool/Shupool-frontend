@@ -8,6 +8,18 @@
     tools:context=".activity.GroupListActivity"
     tools:ignore="ExtraText">
 
+    <TextView
+        android:id="@+id/SHUPOOL"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/main"
+        android:gravity="center_horizontal"
+        android:text="SHU POOL"
+        android:textColor="@color/dark_gray"
+        android:textSize="32dp"
+        android:textStyle="italic|bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/searchBar"
@@ -24,7 +36,7 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/SHUPOOL" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/groupRecyclerView"
@@ -45,8 +57,7 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/groupRecyclerView"
-        app:layout_constraintStart_toStartOf="@id/groupRecyclerView">
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="@id/groupRecyclerView"></LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
