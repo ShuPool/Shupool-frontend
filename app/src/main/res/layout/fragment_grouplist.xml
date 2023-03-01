@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/main"
-        android:gravity="center_horizontal"
+        android:gravity="center_horizontal|center_vertical"
         android:text="SHU POOL"
         android:textColor="@color/dark_gray"
         android:textSize="32dp"

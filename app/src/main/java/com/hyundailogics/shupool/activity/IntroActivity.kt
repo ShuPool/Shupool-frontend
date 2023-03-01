@@ -92,7 +92,7 @@ class IntroActivity : BaseActivity() {
                             }
                         }
                     } else {
-                        startActivity(Intent(applicationContext, LoginActivity::class.java))
+                        startActivity(Intent(applicationContext, SelectActivity::class.java))
                         finish()
                     }
                 })
