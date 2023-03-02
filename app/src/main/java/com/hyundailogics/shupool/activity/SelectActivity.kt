@@ -18,7 +18,7 @@ class SelectActivity : AppCompatActivity() {
         }
 
         binding.crewButton.setOnClickListener {
-            val intent = Intent(this, CarpoolJoinActivity::class.java)
+            val intent = Intent(this, CrewMainActivity::class.java)
             startActivity(intent)
         }
 
